@@ -24,6 +24,7 @@ SCRIPT_DIR="${REPO_DIR}/financial_report/cron"
 
 # 日志配置
 LOG_DIR="${REPO_DIR}/logs"
+mkdir -p "${LOG_DIR}"
 LOG_FILE="${LOG_DIR}/daily_report_$(date +%Y%m%d).log"
 
 # GitHub配置
@@ -356,7 +357,8 @@ generate_report() {
     log_info "========================================"
     
     local report_date=$(date '+%Y年%m月%d日')
-    local report_file="${REPORTS_DIR}/financial_report_${date +%Y%m%d}.md"
+    local report_timestamp=$(date +%Y%m%d)
+    local report_file="${REPORTS_DIR}/financial_report_${report_timestamp}.md"
     
     # 读取数据和分析
     local market_data=$(cat "${data_file}")

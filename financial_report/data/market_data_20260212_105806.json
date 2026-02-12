@@ -1,0 +1,7 @@
+{
+    "collection_time": "2026-02-12 10:58:07 CST",
+    "timestamp": "20260212_105806",
+    "gold": {"source": "Fallback", "price": 2050.0, "previous_close": 2045.0, "change_percent": 0.24, "error": "HTTP Error 429: Too Many Requests"},
+    "us_stocks": {"^DJI": {"name": "道琼斯工业平均指数", "price": 0, "error": "HTTP Error 429: Too Many Requests"}, "^IXIC": {"name": "纳斯达克综合指数", "price": 0, "error": "HTTP Error 429: Too Many Requests"}, "^GSPC": {"name": "标普500指数", "price": 0, "error": "HTTP Error 429: Too Many Requests"}},
+    "cn_stocks": {"000001.SS": {"name": "上证指数", "price": 2877.0, "previous_close": 2872.68, "change_percent": 0.15, "fallback": true}, "399001.SZ": {"name": "深证成指", "price": 8987.0, "previous_close": 8967.23, "change_percent": 0.22, "fallback": true}, "399006.SZ": {"name": "创业板指", "price": 1650.0, "previous_close": 1652.97, "change_percent": -0.18, "fallback": true}}
+}
