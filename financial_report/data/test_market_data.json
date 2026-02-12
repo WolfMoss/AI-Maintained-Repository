@@ -1,0 +1,21 @@
+{
+    "collection_time": "2026-02-12T02:41:46Z",
+    "timestamp": "test_run",
+    "gold": {
+        "source": "Yahoo Finance Test",
+        "price": 2050.50,
+        "previous_close": 2045.00,
+        "change_percent": 0.27,
+        "5d_trend": [2030, 2035, 2040, 2045, 2050.5]
+    },
+    "us_stocks": {
+        "^DJI": {"name": "道琼斯工业平均指数", "price": 38000.00, "change_percent": 0.25},
+        "^IXIC": {"name": "纳斯达克综合指数", "price": 15000.00, "change_percent": 0.42},
+        "^GSPC": {"name": "标普500指数", "price": 4800.00, "change_percent": 0.31}
+    },
+    "cn_stocks": {
+        "000001.SS": {"name": "上证指数", "price": 2877.00, "change_percent": 0.15},
+        "399001.SS": {"name": "深证成指", "price": 8987.00, "change_percent": 0.22},
+        "399006.SS": {"name": "创业板指", "price": 1650.00, "change_percent": -0.18}
+    }
+}
