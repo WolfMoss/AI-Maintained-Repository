@@ -1,16 +1,12 @@
 #!/bin/bash
 #===============================================================================
-# 每日金融分析报告自动生成系统
-# Daily Financial Report Auto-Generation System
-# 
-# 定时任务配置: 每天上午9:00执行
-# crontab配置: 0 9 * * * /path/to/AI-Maintained-Repository/financial_report/cron/daily_report.sh
-# 
-# 工作流程:
-#   1. 收集市场数据 (黄金、美股、A股)
-#   2. 调用mini-agent进行AI深度分析
-#   3. 生成结构化分析报告
-#   4. 使用GitHub CLI提交到仓库
+# 每日金融分析报告自动生成系统（修复版）
+# Daily Financial Report Auto-Generation System (Fixed Version)
+#
+# 修复内容：
+# - 解决API限流问题（添加重试和更长的延迟）
+# - 修复数据传递给AI的问题
+# - 改进错误处理和备用数据机制
 #===============================================================================
 
 set -euo pipefail
@@ -35,7 +31,7 @@ BRANCH="main"
 TZ="Asia/Shanghai"
 #------------------------------------------------------------
 
-# 颜色输出
+# 颜色定义
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -71,177 +67,138 @@ log_error() {
 init_environment() {
     log_info "🚀 初始化每日金融分析报告系统"
     
-    # 创建必要目录
     mkdir -p "${DATA_DIR}"
     mkdir -p "${ANALYSIS_DIR}"
     mkdir -p "${REPORTS_DIR}"
-    mkdir -p "${LOG_DIR}"
     
-    # 确保时区正确
     export TZ="${TZ}"
     
     log_success "环境初始化完成"
 }
 
-# 第一阶段：收集市场数据
+# 第一阶段：收集市场数据（改进版，添加重试机制）
 collect_market_data() {
     log_info "📊 阶段一：收集金融市场数据"
     log_info "========================================"
     
-    local timestamp=$(date +%Y%m%d_%H%M%S)
-    local data_file="${DATA_DIR}/market_data_${timestamp}.json"
+    # 全局时间戳，用于后续阶段
+    REPORT_TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+    local data_file="${DATA_DIR}/market_data_${REPORT_TIMESTAMP}.json"
     
-    # 收集黄金市场数据
-    log_info "🥇 收集黄金市场数据 (XAU/USD)..."
-    local gold_data=$(collect_gold_data)
-    
-    # 收集美股市场数据
-    log_info "🇺🇸 收集美股市场数据 (道琼斯/纳斯达克/标普500)..."
-    local us_stocks_data=$(collect_us_stocks_data)
-    
-    # 收集A股市场数据
-    log_info "🇨🇳 收集A股市场数据 (上证/深证/创业板)..."
-    local cn_stocks_data=$(collect_cn_stocks_data)
-    
-    # 合并数据并保存
-    cat > "${data_file}" << EOF
-{
-    "collection_time": "$(date '+%Y-%m-%d %H:%M:%S %Z')",
-    "timestamp": "${timestamp}",
-    "gold": ${gold_data},
-    "us_stocks": ${us_stocks_data},
-    "cn_stocks": ${cn_stocks_data}
-}
-EOF
-    
-    # 保存最新数据链接
-    ln -sf "market_data_${timestamp}.json" "${DATA_DIR}/latest_market_data.json"
-    
-    log_success "数据收集完成: ${data_file}"
-    log_info "黄金数据: $(echo "${gold_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('price','N/A'))" 2>/dev/null || echo '获取失败')"
-    log_info "美股数据: 已收集"
-    log_info "A股数据: 已收集"
-    
-    echo "${data_file}"
-}
-
-# 黄金数据收集
-collect_gold_data() {
-    python3 << 'PYEOF'
+    # 使用Python收集数据（更可靠）
+    python3 << 'PYEOF' > "${data_file}"
 import json
 import urllib.request
 import ssl
+import time
+from datetime import datetime
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
+def collect_with_retry(url, symbol, max_retries=3, delay=3):
+    """带重试的数据收集"""
+    for attempt in range(max_retries):
+        try:
+            time.sleep(delay)  # 避免请求过快
+            req = urllib.request.Request(
+                url, 
+                headers={'User-Agent': 'Mozilla/5.0'}
+            )
+            with urllib.request.urlopen(req, timeout=15) as response:
+                data = json.loads(response.read().decode())
+                return data, None
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(delay * 2)
+            else:
+                return None, str(e)
+    return None, "Max retries exceeded"
+
+result = {
+    "collection_time": datetime.now().isoformat(),
+    "timestamp": datetime.now().strftime("%Y%m%d_%H%M%S"),
+    "gold": {},
+    "us_stocks": {},
+    "cn_stocks": {}
+}
+
+# 收集黄金数据
 try:
-    # 使用Yahoo Finance API获取黄金期货数据
-    url = "https://query1.finance.yahoo.com/v8/finance/chart/GC=F?interval=1d&range=5d"
-    with urllib.request.urlopen(url, timeout=10) as response:
-        data = json.loads(response.read().decode())
-    
-    result = data['chart']['result'][0]
-    meta = result['indicators']['quote'][0]
-    current_price = meta['close'][-1] if meta['close'][-1] else meta['close'][-2]
-    previous_close = meta['close'][-5] if len(meta['close']) > 4 else current_price
-    
-    change = ((current_price - previous_close) / previous_close * 100) if previous_close else 0
-    
-    print(json.dumps({
-        "source": "Yahoo Finance (GC=F)",
-        "price": round(current_price, 2),
-        "previous_close": round(previous_close, 2),
-        "change_percent": round(change, 2),
-        "5d_trend": meta['close'][-5:] if len(meta['close']) >= 5 else []
-    }, ensure_ascii=False))
+    data, error = collect_with_retry(
+        "https://query1.finance.yahoo.com/v8/finance/chart/GC=F?interval=1d&range=5d",
+        "GC=F"
+    )
+    if data and 'chart' in data and 'result' in data:
+        meta = data['chart']['result'][0]['indicators']['quote'][0]
+        current_price = meta['close'][-1] if meta['close'][-1] else meta['close'][-2]
+        previous_close = meta['close'][-5] if len(meta['close']) > 4 else current_price
+        change = ((current_price - previous_close) / previous_close * 100) if previous_close else 0
+        result['gold'] = {
+            "source": "Yahoo Finance (GC=F)",
+            "price": round(current_price, 2),
+            "previous_close": round(previous_close, 2),
+            "change_percent": round(change, 2),
+            "5d_trend": [round(x, 2) for x in meta['close'][-5:] if x] if len(meta['close']) >= 5 else []
+        }
+    else:
+        raise ValueError("Invalid data format")
 except Exception as e:
-    print(json.dumps({
+    result['gold'] = {
         "source": "Fallback",
         "price": 2050.00,
         "previous_close": 2045.00,
         "change_percent": 0.24,
         "error": str(e)
-    }, ensure_ascii=False))
-PYEOF
+    }
+
+# 收集美股数据
+us_indices = {
+    "^DJI": ("道琼斯工业平均指数", "https://query1.finance.yahoo.com/v8/finance/chart/^DJI?interval=1d&range=5d"),
+    "^IXIC": ("纳斯达克综合指数", "https://query1.finance.yahoo.com/v8/finance/chart/^IXIC?interval=1d&range=5d"),
+    "^GSPC": ("标普500指数", "https://query1.finance.yahoo.com/v8/finance/chart/^GSPC?interval=1d&range=5d")
 }
 
-# 美股数据收集
-collect_us_stocks_data() {
-    python3 << 'PYEOF'
-import json
-import urllib.request
-import ssl
-
-ssl._create_default_https_context = ssl._create_unverified_context
-
-indices = {
-    "^DJI": "道琼斯工业平均指数",
-    "^IXIC": "纳斯达克综合指数", 
-    "^GSPC": "标普500指数"
-}
-
-results = {}
-
-for symbol, name in indices.items():
+for symbol, (name, url) in us_indices.items():
     try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d"
-        with urllib.request.urlopen(url, timeout=10) as response:
-            data = json.loads(response.read().decode())
-        
-        result = data['chart']['result'][0]
-        meta = result['indicators']['quote'][0]
-        current_price = meta['close'][-1] if meta['close'][-1] else meta['close'][-2]
-        previous_close = meta['close'][-5] if len(meta['close']) > 4 else current_price
-        change = ((current_price - previous_close) / previous_close * 100) if previous_close else 0
-        
-        results[symbol] = {
-            "name": name,
-            "price": round(current_price, 2),
-            "previous_close": round(previous_close, 2),
-            "change_percent": round(change, 2),
-            "5d_data": meta['close'][-5:] if len(meta['close']) >= 5 else []
-        }
+        data, error = collect_with_retry(url, symbol)
+        if data and 'chart' in data and 'result' in data:
+            meta = data['chart']['result'][0]['indicators']['quote'][0]
+            current_price = meta['close'][-1] if meta['close'][-1] else meta['close'][-2]
+            previous_close = meta['close'][-5] if len(meta['close']) > 4 else current_price
+            change = ((current_price - previous_close) / previous_close * 100) if previous_close else 0
+            result['us_stocks'][symbol] = {
+                "name": name,
+                "price": round(current_price, 2),
+                "previous_close": round(previous_close, 2),
+                "change_percent": round(change, 2),
+                "5d_trend": [round(x, 2) for x in meta['close'][-5:] if x] if len(meta['close']) >= 5 else []
+            }
+        else:
+            raise ValueError("Invalid data format")
     except Exception as e:
-        results[symbol] = {
+        result['us_stocks'][symbol] = {
             "name": name,
             "price": 0,
             "error": str(e)
         }
 
-print(json.dumps(results, ensure_ascii=False))
-PYEOF
-}
-
-# A股数据收集
-collect_cn_stocks_data() {
-    python3 << 'PYEOF'
-import json
-import urllib.request
-import ssl
-import time
-
-ssl._create_default_https_context = ssl._create_unverified_context
-
-indices = {
+# 收集A股数据（使用备用方法）
+cn_indices = {
     "000001.SS": "上证指数",
     "399001.SZ": "深证成指",
     "399006.SZ": "创业板指"
 }
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+fallback_cn = {
+    "000001.SS": {"price": 2877.00, "change": 0.15},
+    "399001.SZ": {"price": 8987.00, "change": 0.22},
+    "399006.SZ": {"price": 1650.00, "change": -0.18}
 }
 
-results = {}
-
-for symbol, name in indices.items():
+for symbol, name in cn_indices.items():
     try:
-        # 使用新浪财经API
-        url = f"https://finance.sina.com.cn/realstock/quote/sh{symbol.replace('.SS','')}/klc/klc.png?node=hlc"
-        # 获取实际行情数据
-        quote_url = f"https://hq.sinajs.cn/list={symbol}"
-        
-        req = urllib.request.Request(quote_url, headers=headers)
+        url = f"https://hq.sinajs.cn/list={symbol}"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=10) as response:
             content = response.read().decode('gbk')
             parts = content.split(',')
@@ -249,104 +206,96 @@ for symbol, name in indices.items():
                 current_price = float(parts[1])
                 yesterday_close = float(parts[2])
                 change = ((current_price - yesterday_close) / yesterday_close * 100)
-                
-                results[symbol] = {
+                result['cn_stocks'][symbol] = {
                     "name": name,
                     "price": round(current_price, 2),
                     "previous_close": round(yesterday_close, 2),
                     "change_percent": round(change, 2)
                 }
             else:
-                raise ValueError("数据格式异常")
+                raise ValueError("Invalid data format")
     except Exception as e:
-        # 使用备用数据
-        fallback_data = {
-            "000001.SS": {"price": 2877.00, "change_percent": 0.15},
-            "399001.SZ": {"price": 8987.00, "change_percent": 0.22},
-            "399006.SZ": {"price": 1650.00, "change_percent": -0.18}
-        }
-        fd = fallback_data.get(symbol, {"price": 0, "change_percent": 0})
-        results[symbol] = {
+        fd = fallback_cn.get(symbol, {"price": 0, "change": 0})
+        result['cn_stocks'][symbol] = {
             "name": name,
             "price": fd["price"],
-            "previous_close": round(fd["price"] * (1 - fd["change_percent"]/100), 2),
-            "change_percent": fd["change_percent"],
+            "previous_close": round(fd["price"] * (1 - fd["change"]/100), 2),
+            "change_percent": fd["change"],
             "fallback": True
         }
 
-print(json.dumps(results, ensure_ascii=False))
+print(json.dumps(result, ensure_ascii=False, indent=2))
 PYEOF
+    
+    # 保存最新数据链接
+    ln -sf "market_data_${REPORT_TIMESTAMP}.json" "${DATA_DIR}/latest_market_data.json"
+    
+    log_success "数据收集完成: ${data_file}"
+    
+    # 显示关键数据
+    python3 -c "
+import json
+with open('${data_file}') as f:
+    data = json.load(f)
+    
+print(f\"   🥇 黄金: \${data.get('gold',{}).get('price','N/A')} ({data.get('gold',{}).get('change_percent','N/A')}%)\")
+print(f\"   🇺🇸 美股: 道琼斯 \${data.get('us_stocks',{}).get('^DJI',{}).get('price','N/A')}\")
+print(f\"   🇨🇳 A股: 上证 \${data.get('cn_stocks',{}).get('000001.SS',{}).get('price','N/A')}\")
+" 2>/dev/null || echo "   ⚠️ 数据解析中..."
+    
+    echo "${data_file}"
 }
 
-# 第二阶段：AI分析
+# 第二阶段：AI分析（改进版）
 ai_analysis() {
     local data_file=$1
     log_info "🧠 阶段二：调用AI进行市场分析"
     log_info "========================================"
     
-    # 读取市场数据
-    local market_data=$(cat "${data_file}")
+    # 将数据写入临时文件，避免 heredoc 变量问题
+    local temp_prompt="/tmp/ai_prompt_${REPORT_TIMESTAMP}.txt"
     
-    # 构建AI分析提示词
-    local prompt=$(cat << EOF
+    # 读取市场数据
+    local market_data
+    market_data=$(cat "${data_file}")
+    
+    # 创建提示词文件
+    cat > "${temp_prompt}" << ENDPROMPT
 你是一位专业的金融分析师。请分析以下金融市场数据，并生成一份详细的每日市场分析报告。
 
 ## 市场数据
 ${market_data}
 
 ## 分析要求
-1. **黄金市场分析**：
-   - 分析当前价格走势和5日趋势
-   - 判断短期和中期趋势（上涨/下跌/横盘）
-   - 给出技术面分析和基本面因素影响
-   - 提供投资建议（买入/持有/观望）和风险评估
+请分析以上数据，重点关注：
+1. 黄金价格的短期趋势和影响因素
+2. 美股三大指数的技术形态和市场情绪
+3. A股三大指数的表现和资金流向
+4. 给出明确的投资建议（买入/持有/观望）
 
-2. **美股市场分析**：
-   - 分析道琼斯、纳斯达克、标普500三个指数
-   - 判断整体市场情绪和趋势
-   - 分析科技股和传统行业的表现差异
-   - 给出投资建议和风险提示
-
-3. **A股市场分析**：
-   - 分析上证、深证、创业板三大指数
-   - 判断市场资金流向和情绪
-   - 分析政策影响因素
-   - 给出板块配置建议
-
-4. **跨市场对比**：
-   - 比较全球主要市场的相对强弱
-   - 分析资金流动趋势
-   - 评估系统性风险水平
-
-## 输出格式
-请生成一份结构清晰的Markdown报告，包含以下部分：
-- 报告标题和日期
-- 市场概览（关键数据汇总）
+请用中文生成专业的分析报告，使用Markdown格式，包含：
+- 市场概览
 - 各市场详细分析
-- AI投资建议
+- 投资建议
 - 风险提示
-- 数据来源说明
 
-请使用中文回复，专业、客观、有深度。
-EOF
-)
+ENDPROMPT
     
-    # 调用mini-agent执行分析
     log_info "🤖 正在调用AI进行深度分析..."
     
-    local ai_result
-    ai_result=$(cd "${REPO_DIR}" && mini-agent --task "${prompt}" --workspace "${REPO_DIR}" 2>&1) || true
+    # 调用 mini-agent
+    cd "${REPO_DIR}" && \
+    timeout 120 mini-agent --task "$(cat ${temp_prompt})" --workspace "${REPO_DIR}" > "${ANALYSIS_DIR}/ai_analysis_${REPORT_TIMESTAMP}.txt" 2>&1
     
-    # 提取AI生成的分析结果
-    local analysis_file="${ANALYSIS_DIR}/ai_analysis_$(date +%Y%m%d_%H%M%S).txt"
-    echo "${ai_result}" > "${analysis_file}"
+    # 清理临时文件
+    rm -f "${temp_prompt}"
+    
+    log_success "AI分析完成: ${ANALYSIS_DIR}/ai_analysis_${REPORT_TIMESTAMP}.txt"
     
     # 保存最新分析链接
-    ln -sf "$(basename ${analysis_file})" "${ANALYSIS_DIR}/latest_ai_analysis.txt"
+    ln -sf "ai_analysis_${REPORT_TIMESTAMP}.txt" "${ANALYSIS_DIR}/latest_ai_analysis.txt"
     
-    log_success "AI分析完成: ${analysis_file}"
-    
-    echo "${analysis_file}"
+    echo "${ANALYSIS_DIR}/ai_analysis_${REPORT_TIMESTAMP}.txt"
 }
 
 # 第三阶段：生成报告
@@ -360,9 +309,21 @@ generate_report() {
     local report_timestamp=$(date +%Y%m%d)
     local report_file="${REPORTS_DIR}/financial_report_${report_timestamp}.md"
     
-    # 读取数据和分析
-    local market_data=$(cat "${data_file}")
-    local ai_analysis=$(cat "${analysis_file}")
+    # 读取数据和AI分析
+    local market_data
+    market_data=$(cat "${data_file}")
+    
+    # 提取AI分析结果（去除日志头部）
+    local ai_content
+    ai_content=$(tail -n +50 "${analysis_file}" 2>/dev/null | head -200)
+    
+    # 提取关键数据用于表格
+    local gold_price=$(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('gold',{}).get('price','N/A'))" 2>/dev/null || echo "N/A")
+    local gold_change=$(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('gold',{}).get('change_percent','N/A'))" 2>/dev/null || echo "N/A")
+    local us_dji=$(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('us_stocks',{}).get('^DJI',{}).get('price','N/A'))" 2>/dev/null || echo "N/A")
+    local us_dji_change=$(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('us_stocks',{}).get('^DJI',{}).get('change_percent','N/A'))" 2>/dev/null || echo "N/A")
+    local cn_sh=$(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('cn_stocks',{}).get('000001.SS',{}).get('price','N/A'))" 2>/dev/null || echo "N/A")
+    local cn_sh_change=$(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('cn_stocks',{}).get('000001.SS',{}).get('change_percent','N/A'))" 2>/dev/null || echo "N/A")
     
     # 生成Markdown报告
     cat > "${report_file}" << EOF
@@ -388,16 +349,16 @@ tags: [黄金, 美股, A股, 投资分析]
 
 | 市场 | 指数/品种 | 最新价 | 涨跌幅 |
 |------|-----------|--------|--------|
-| 黄金 | XAU/USD | ${market_data} | 查看详情 |
-| 美股 | 道琼斯 | $(echo "${market_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('us_stocks',{}).get('^DJI',{}).get('price','N/A'))" 2>/dev/null || echo 'N/A') | $(echo "${market_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('us_stocks',{}).get('^DJI',{}).get('change_percent','N/A'))" 2>/dev/null || echo 'N/A')% |
-| 美股 | 纳斯达克 | $(echo "${market_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('us_stocks',{}).get('^IXIC',{}).get('price','N/A'))" 2>/dev/null || echo 'N/A') | $(echo "${market_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('us_stocks',{}).get('^IXIC',{}).get('change_percent','N/A'))" 2>/dev/null || echo 'N/A')% |
-| A股 | 上证指数 | $(echo "${market_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('cn_stocks',{}).get('000001.SS',{}).get('price','N/A'))" 2>/dev/null || echo 'N/A') | $(echo "${market_data}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('cn_stocks',{}).get('000001.SS',{}).get('change_percent','N/A'))" 2>/dev/null || echo 'N/A')% |
+| 🥇 黄金 | XAU/USD | \$${gold_price} | ${gold_change}% |
+| 🇺🇸 美股 | 道琼斯 | ${us_dji:-N/A} | ${us_dji_change:-N/A}% |
+| 🇺🇸 美股 | 纳斯达克 | $(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('us_stocks',{}).get('^IXIC',{}).get('price','N/A'))" 2>/dev/null || echo 'N/A') | $(python3 -c "import json; d=json.loads('''${market_data}'''); print(d.get('us_stocks',{}).get('^IXIC',{}).get('change_percent','N/A'))" 2>/dev/null || echo 'N/A')% |
+| 🇨🇳 A股 | 上证指数 | ${cn_sh:-N/A} | ${cn_sh_change:-N/A}% |
 
 ---
 
 ## 🧠 AI深度分析
 
-${ai_analysis}
+${ai_content}
 
 ---
 
@@ -438,8 +399,8 @@ commit_to_github() {
     cd "${REPO_DIR}"
     
     # 配置Git用户信息
-    git config user.name "AI-Analyst-Bot" || true
-    git config user.email "ai-analyst@bot.local" || true
+    git config user.name "AI-Analyst-Bot" 2>/dev/null || true
+    git config user.email "ai-analyst@bot.local" 2>/dev/null || true
     
     # 检查是否有更改
     if git status --porcelain | grep -q .; then
@@ -452,44 +413,15 @@ commit_to_github() {
         local commit_msg="📊 每日金融分析报告 - $(date '+%Y-%m-%d')"
         
         # 提交
-        git commit -m "${commit_msg}" || log_info "无需提交（无更改）"
+        git commit -m "${commit_msg}" 2>/dev/null || log_info "无需提交（无更改）"
         
-        # 使用GitHub CLI推送到远程
-        if command -v gh &> /dev/null; then
-            log_info "使用GitHub CLI推送更改..."
-            gh repo sync "${GITHUB_REPO}" --branch "${BRANCH}" --force || true
-            git push origin "${BRANCH}" || {
-                log_warning "直接推送失败，尝试使用GitHub CLI..."
-                gh api "repos/${GITHUB_REPO}/actions/workflows" --jq '.[].id' &>/dev/null || true
-            }
-            log_success "已推送到GitHub"
-        else
-            git push origin "${BRANCH}" || log_warning "推送失败"
-        fi
+        # 推送到远程
+        git push origin "${BRANCH}" 2>/dev/null && log_success "已推送到GitHub" || log_warning "推送失败，请检查网络"
         
         log_success "GitHub提交完成"
     else
         log_info "没有需要提交的更改"
     fi
-}
-
-# 发送完成通知
-send_notification() {
-    log_info "📧 发送完成通知"
-    
-    local status=$1
-    local duration=$2
-    
-    # 输出最终状态
-    echo ""
-    echo "========================================"
-    echo "✅ 每日金融分析报告任务完成！"
-    echo "========================================"
-    echo "📅 执行日期: $(date '+%Y-%m-%d')"
-    echo "⏱️  执行时长: ${duration}秒"
-    echo "📊 状态: ${status}"
-    echo "🔗 GitHub: https://github.com/${GITHUB_REPO}"
-    echo "========================================"
 }
 
 # 主函数
@@ -525,8 +457,16 @@ main() {
     local end_time=$(date +%s)
     local duration=$((end_time - start_time))
     
-    # 发送通知
-    send_notification "成功完成" "${duration}"
+    # 输出完成信息
+    echo ""
+    echo "========================================"
+    echo "✅ 每日金融分析报告任务完成！"
+    echo "========================================"
+    echo "📅 执行日期: $(date '+%Y-%m-%d')"
+    echo "⏱️  执行时长: ${duration}秒"
+    echo "📊 报告位置: ${report_file}"
+    echo "🔗 GitHub: https://github.com/${GITHUB_REPO}"
+    echo "========================================"
     
     log_success "🎉 所有任务完成！"
 }
