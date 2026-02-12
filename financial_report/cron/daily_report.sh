@@ -252,8 +252,11 @@ ai_analysis() {
     log_info "🧠 阶段二：调用AI进行市场分析"
     log_info "========================================"
     
+    # 从数据文件名提取时间戳
+    local timestamp=$(basename "${data_file}" | sed 's/market_data_\([0-9_]*\)\.json/\1/')
+    
     # 将数据写入临时文件，避免 heredoc 变量问题
-    local temp_prompt="/tmp/ai_prompt_${REPORT_TIMESTAMP}.txt"
+    local temp_prompt="/tmp/ai_prompt_${timestamp}.txt"
     
     # 读取市场数据
     local market_data
@@ -285,17 +288,17 @@ ENDPROMPT
     
     # 调用 mini-agent
     cd "${REPO_DIR}" && \
-    timeout 120 mini-agent --task "$(cat ${temp_prompt})" --workspace "${REPO_DIR}" > "${ANALYSIS_DIR}/ai_analysis_${REPORT_TIMESTAMP}.txt" 2>&1
+    timeout 120 mini-agent --task "$(cat ${temp_prompt})" --workspace "${REPO_DIR}" > "${ANALYSIS_DIR}/ai_analysis_${timestamp}.txt" 2>&1
     
     # 清理临时文件
     rm -f "${temp_prompt}"
     
-    log_success "AI分析完成: ${ANALYSIS_DIR}/ai_analysis_${REPORT_TIMESTAMP}.txt"
+    log_success "AI分析完成: ${ANALYSIS_DIR}/ai_analysis_${timestamp}.txt"
     
     # 保存最新分析链接
-    ln -sf "ai_analysis_${REPORT_TIMESTAMP}.txt" "${ANALYSIS_DIR}/latest_ai_analysis.txt"
+    ln -sf "ai_analysis_${timestamp}.txt" "${ANALYSIS_DIR}/latest_ai_analysis.txt"
     
-    echo "${ANALYSIS_DIR}/ai_analysis_${REPORT_TIMESTAMP}.txt"
+    echo "${ANALYSIS_DIR}/ai_analysis_${timestamp}.txt"
 }
 
 # 第三阶段：生成报告
