@@ -1,0 +1,5 @@
+# Financial Report Module Dependencies
+# 金融分析报告模块依赖
+
+# 核心依赖（必选）
+requests>=2.31.0
