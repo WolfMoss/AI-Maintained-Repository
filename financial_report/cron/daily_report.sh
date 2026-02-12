@@ -43,7 +43,8 @@ log() {
     local level=$1
     local message=$2
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    echo -e "${timestamp} [${level}] ${message}"
+    # 只输出到stderr，避免干扰stdout的返回值
+    echo -e "${timestamp} [${level}] ${message}" >&2
     echo "${timestamp} [${level}] ${message}" >> "${LOG_FILE}"
 }
 
@@ -232,17 +233,19 @@ PYEOF
     
     log_success "数据收集完成: ${data_file}"
     
-    # 显示关键数据
+    # 显示关键数据（重定向到stderr避免干扰stdout返回值）
     python3 -c "
 import json
+import sys
 with open('${data_file}') as f:
     data = json.load(f)
+
+print(f\"   🥇 黄金: \${data.get('gold',{}).get('price','N/A')} ({data.get('gold',{}).get('change_percent','N/A')}%)\", file=sys.stderr)
+print(f\"   🇺🇸 美股: 道琼斯 \${data.get('us_stocks',{}).get('^DJI',{}).get('price','N/A')}\", file=sys.stderr)
+print(f\"   🇨🇳 A股: 上证 \${data.get('cn_stocks',{}).get('000001.SS',{}).get('price','N/A')}\", file=sys.stderr)
+" 2>/dev/null || echo "   ⚠️ 数据解析中..." >&2
     
-print(f\"   🥇 黄金: \${data.get('gold',{}).get('price','N/A')} ({data.get('gold',{}).get('change_percent','N/A')}%)\")
-print(f\"   🇺🇸 美股: 道琼斯 \${data.get('us_stocks',{}).get('^DJI',{}).get('price','N/A')}\")
-print(f\"   🇨🇳 A股: 上证 \${data.get('cn_stocks',{}).get('000001.SS',{}).get('price','N/A')}\")
-" 2>/dev/null || echo "   ⚠️ 数据解析中..."
-    
+    # 只返回数据文件路径（stdout）
     echo "${data_file}"
 }
 
