@@ -1,0 +1,15 @@
+# 🤖 AI-Maintained-Repository 依赖配置
+# 此文件由AI自动维护
+# 最后更新：AI自动执行
+
+# Python版本要求
+python>=3.10
+
+# 基础依赖（可选安装）
+# ai-sdk>=0.1.0  # AI功能依赖（按需启用）
+# github-sdk>=1.0.0  # GitHub API依赖（按需启用）
+
+# 开发工具（可选）
+# pytest>=7.0.0  # 测试框架
+# black>=23.0.0  # 代码格式化
+# flake8>=6.0.0  # 代码检查
