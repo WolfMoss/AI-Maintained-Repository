@@ -1,48 +1,3 @@
----
-title: 每日金融市场分析报告
-date: 2026年02月12日
-author: AI Analyst (mini-agent)
-categories: [金融分析, 市场研究]
-tags: [黄金, 美股, A股, 投资分析, 地缘政治]
----
-
-# 📊 每日金融市场分析报告
-
-**报告日期**: 2026年02月12日  
-**生成时间**: 11:27:57 CST  
-**分析引擎**: Claude AI (mini-agent)
-
----
-
-## 🔍 今日重要新闻摘要
-
-*(由AI从24小时内全球重要新闻中筛选)*
-
-> 新闻来源：AI自动搜索聚合
-
----
-
-## 🧠 AI深度分析
-
-## 分析要求：
-1. 分析每条新闻对以下市场的影响：
-   - 黄金市场（避险需求、美元走势）
-   - 美股市场（科技股、金融股、消费股）
-   - A股市场（主板、创业板、北向资金）
-
-2. 给出明确的市场判断：
-   - 短期趋势（1-3天）
-   - 中期展望（1-2周）
-   - 风险因素
-
-3. 投资建议：
-   - 黄金：买入/持有/观望/卖出
-   - 美股：买入/持有/观望/卖出
-   - A股：买入/持有/观望/卖出
-
-4. 输出格式为专业的Markdown金融分析报告。
-
-## 新闻内容：
 [32m✅ LLM retry mechanism enabled (max 3 retries)[0m
 [32m✅ Loaded Bash tool[0m
 [32m✅ Loaded Bash Output tool[0m
@@ -163,39 +118,5 @@ Total MCP tools loaded: 0
 [2m────────────────────────────────────────[0m
 
 [96mCleaning up MCP connections...[0m
-[32m✅ Cleanup complete[0m[0m
+[32m✅ Cleanup complete[0m
 
-[2m────────────────────────────────────────────────────────────[0m
-
-[94mAgent[0m [2m›[0m [2mThinking...[0m
-
-[2m📝 Log file: /home/moss/.mini-agent/log/agent_run_20260212_112459.log[0m
-
----
-
-## 📋 数据来源与说明
-
-- **新闻来源**: AI自动搜索聚合（Bloomberg, Reuters, WSJ, 新华社等）
-- **分析引擎**: Claude AI via mini-agent
-- **覆盖市场**: 黄金、美股、A股、全球主要股指
-
----
-
-## 🔄 自动化说明
-
-本报告由AI全自动化生成：
-
-| 阶段 | 说明 | 执行时间 |
-|------|------|---------|
-| 新闻搜索 | AI搜索24小时内重要地缘和金融新闻 | 每天9:00 |
-| 深度分析 | Claude大模型分析新闻对各市场的影响 | 即时生成 |
-| 报告生成 | 自动生成Markdown格式专业报告 | 即时生成 |
-| 自动提交 | 生成报告后自动提交到GitHub仓库 | 即时执行 |
-
-**GitHub仓库**: https://github.com/WolfMoss/AI-Maintained-Repository
-
-**系统架构**: 本地cron + mini-agent + GitHub CLI
-
----
-
-*报告生成于: 2026-02-12 11:27:57 CST*
