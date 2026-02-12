@@ -39,7 +39,6 @@ on:
     paths:
       - 'financial_report/**'
       - '.github/workflows/financial-report.yml'
-    branches-ignore: []
 
 env:
   REPO_NAME: ${{ github.repository }}
