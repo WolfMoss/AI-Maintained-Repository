@@ -2,8 +2,11 @@
 # 此文件由AI自动维护
 # 最后更新：AI自动执行
 
-# Python版本要求
-python>=3.10
+# 注意：Python版本在 .github/workflows/*.yml 中指定
+# 当前使用 Python 3.11
+
+# 基础依赖（必选）
+requests>=2.31.0
 
 # 基础依赖（可选安装）
 # ai-sdk>=0.1.0  # AI功能依赖（按需启用）
