@@ -77,13 +77,12 @@ collect_news() {
         fi
     fi
     
-    # 使用MCP工具搜索新闻
+    # 使用MCP工具搜索新闻（纯JSON输出）
     local mcp_result
-    mcp_result=$(echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"search_news","arguments":{"keywords":"地缘政治 金融 经济 24小时内","max_results":15}}}' | python3 /home/moss/.mini-agent/mcp-servers/mcp_news_server.py 2>&1)
+    mcp_result=$(echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"search_news","arguments":{"keywords":"地缘政治 金融 经济 24小时内","max_results":15}}}' | timeout 30 python3 /home/moss/.mini-agent/mcp-servers/mcp_news_server.py 2>/dev/null)
     
-    # 解析MCP结果
-    if echo "${mcp_result}" | grep -q "jsonrpc"; then
-        # 提取text内容
+    # 解析MCP JSON结果
+    if echo "${mcp_result}" | python3 -c "import json,sys; d=json.load(sys.stdin); assert 'result' in d" 2>/dev/null; then
         echo "${mcp_result}" | python3 -c "
 import json
 import sys
@@ -93,8 +92,8 @@ try:
         for item in data['result']['content']:
             if item.get('type') == 'text':
                 print(item.get('text', ''))
-except:
-    pass
+except Exception as e:
+    print('Error:', e, file=sys.stderr)
 " > "${news_file}"
     fi
     
