@@ -1,37 +1,40 @@
----
-title: 每日金融市场分析报告
-date: 2026年02月12日
-author: AI Analyst (mini-agent)
-categories: [金融分析, 市场研究]
-tags: [黄金, 美股, A股, 投资分析, 地缘政治]
----
+[32m✅ LLM retry mechanism enabled (max 3 retries)[0m
+[32m✅ Loaded Bash tool[0m
+[32m✅ Loaded Bash Output tool[0m
+[32m✅ Loaded Bash Kill tool[0m
+[96mLoading Claude Skills...[0m
+✅ Discovered 15 Claude Skills
+[32m✅ Loaded Skill tool (get_skill)[0m
+[96mLoading MCP tools...[0m
+[2m  MCP timeouts: connect=10.0s, execute=60.0s, sse_read=120.0s[0m
+Skipping disabled server: minimax_search
+Skipping disabled server: memory
 
-# 📊 每日金融市场分析报告
+Total MCP tools loaded: 0
+[33m⚠️  No available MCP tools found[0m
 
-**报告日期**: 2026年02月12日  
-**生成时间**: 11:41:17 CST  
-**分析引擎**: Claude AI (mini-agent)
+[32m✅ Loaded file operation tools (workspace: /home/moss/workspace/AI-Maintained-Repository)[0m
+[32m✅ Loaded session note tool[0m
+[32m✅ Loaded system prompt (from: /home/moss/.mini-agent/config/system_prompt.md)[0m
+[32m✅ Injected 15 skills metadata into system prompt[0m
 
----
+[1m[96m╔══════════════════════════════════════════════════════════╗[0m
+[1m[96m║[0m      [1m🤖 Mini Agent - Multi-turn Interactive Session[0m      [1m[96m║[0m
+[1m[96m╚══════════════════════════════════════════════════════════╝[0m
 
-## 🔍 今日重要新闻摘要
+[2m┌──────────────────────────────────────────────────────────┐[0m
+[2m│[0m                       [96mSession Info[0m                       [2m│[0m
+[2m├──────────────────────────────────────────────────────────┤[0m
+[2m│[0m Model: MiniMax-M2.1                                      [2m│[0m
+[2m│[0m Workspace: /home/moss/workspace/AI-Maintained-Repository [2m│[0m
+[2m│[0m Message History: 1 messages                              [2m│[0m
+[2m│[0m Available Tools: 8 tools                                 [2m│[0m
+[2m└──────────────────────────────────────────────────────────┘[0m
 
-> 新闻来源：AI自动搜索聚合（MCP工具）
+[2mType [92m/help[2m for help, [92m/exit[2m to quit[0m
 
-1. 【BBC News】Police identify 18-year-old as suspect in Tumbler Ridge shooting
-   Six people were killed and at least 25 others were injured at a school, and two others were found de
-   来源: https://www.bbc.com/news/articles/ce8w95knp55o?at_medium=RSS&at_campaign=rss
-2. 【BBC News】'It was terrifying': Tumbler Ridge's tight-knit community in shock after shooting
-   Members of the remote community have spoken of their fear and uncertainty after nine people were kil
-   来源: https://www.bbc.com/news/articles/cddn078mnn5o?at_medium=RSS&at_campaign=rss
-3. 【BBC News】US House votes to overturn Trump's tariffs on Canada
-   Six Republican lawmakers joined Democrats to back a resolution that seeks to end the tariffs Trump i
-   来源: https://www.bbc.com/news/articles/clyz2142e77o?at_medium=RSS&at_campaign=rss
-4. 【BBC News】Powerful cyclone kills at least 31 as it tears through Madagascar port
 
----
-
-## 🧠 AI深度分析
+[96m执行任务（非交互模式）:[0m [97m你是一位资深金融分析师。请分析以下新闻事件，并撰写一份金融市场分析报告。
 
 ## 新闻内容：
 1. 【BBC News】Police identify 18-year-old as suspect in Tumbler Ridge shooting
@@ -165,31 +168,3 @@ tags: [黄金, 美股, A股, 投资分析, 地缘政治]
 [96mCleaning up MCP connections...[0m
 [32m✅ Cleanup complete[0m
 
----
-
-## 📋 数据来源与说明
-
-- **新闻来源**: MCP搜索工具聚合（支持DuckDuckGo、RSS订阅源等）
-- **分析引擎**: Claude AI via mini-agent
-- **覆盖市场**: 黄金、美股、A股、全球主要股指
-
----
-
-## 🔄 自动化说明
-
-本报告由AI全自动化生成：
-
-| 阶段 | 说明 | 执行时间 |
-|------|------|---------|
-| 新闻搜索 | AI通过MCP工具搜索24小时内重要新闻 | 每天9:00 |
-| 深度分析 | Claude大模型分析新闻对各市场的影响 | 即时生成 |
-| 报告生成 | 自动生成Markdown格式专业报告 | 即时生成 |
-| 自动提交 | 生成报告后自动提交到GitHub仓库 | 即时执行 |
-
-**GitHub仓库**: https://github.com/WolfMoss/AI-Maintained-Repository
-
-**系统架构**: 本地cron + mini-agent + MCP新闻服务器 + GitHub CLI
-
----
-
-*报告生成于: 2026-02-12 11:41:17 CST*
