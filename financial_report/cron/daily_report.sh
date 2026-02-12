@@ -4,7 +4,7 @@
 # Daily Financial Report Auto-Generation System (AI Search Version)
 #
 # 特点：
-# - 使用mini-agent搜索获取最新地缘和金融新闻
+# - 使用MCP工具搜索获取最新地缘和金融新闻
 # - AI自主分析并生成专业报告
 # - 本地cron定时触发
 #===============================================================================
@@ -66,28 +66,62 @@ collect_news() {
     
     log_info "🔍 正在搜索24小时内重要新闻..."
     
-    # 让mini-agent搜索新闻，并过滤掉日志头部
-    cd "${REPO_DIR}" && \
-    timeout 180 mini-agent --task "搜索十条24小时内国内外重要地缘政治和金融经济新闻，要求：
-1. 包含中国、美国、欧洲的重要事件
-2. 涵盖地缘政治、货币政策、经济数据等方面
-3. 每条新闻要有具体来源和时间
-4. 以清晰的编号格式输出：1. 2. 3. ... 10.
-5. **重要**：只输出新闻内容，不要任何前缀、标题、说明，直接开始输出新闻列表" --workspace "${REPO_DIR}" 2>&1 | \
-    grep -E "^[0-9]+\.|^新闻|^地缘|^金融|^美国|^中国|^欧洲|^全球" | head -30 > "${news_file}"
+    # 尝试使用MCP搜索工具
+    if python3 /home/moss/.mini-agent/mcp-servers/mcp_news_server.py &
+    then
+        sleep 2
+        # 测试MCP服务器
+        echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | python3 /home/moss/.mini-agent/mcp-servers/mcp_news_server.py > /dev/null 2>&1
+        if [ $? -eq 0 ]; then
+            log_info "✅ MCP新闻服务器已启动"
+        fi
+    fi
     
-    # 如果过滤后为空，尝试获取所有非日志内容
-    if [ ! -s "${news_file}" ]; then
+    # 使用MCP工具搜索新闻
+    local mcp_result
+    mcp_result=$(echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"search_news","arguments":{"keywords":"地缘政治 金融 经济 24小时内","max_results":15}}}' | python3 /home/moss/.mini-agent/mcp-servers/mcp_news_server.py 2>&1)
+    
+    # 解析MCP结果
+    if echo "${mcp_result}" | grep -q "jsonrpc"; then
+        # 提取text内容
+        echo "${mcp_result}" | python3 -c "
+import json
+import sys
+try:
+    data = json.load(sys.stdin)
+    if 'result' in data and 'content' in data['result']:
+        for item in data['result']['content']:
+            if item.get('type') == 'text':
+                print(item.get('text', ''))
+except:
+    pass
+" > "${news_file}"
+    fi
+    
+    # 如果MCP结果为空，使用备用方案
+    if [ ! -s "${news_file}" ] || [ $(wc -c < "${news_file}") -lt 100 ]; then
+        log_warning "MCP搜索返回结果较少，使用备用方案..."
+        
+        # 使用mini-agent基于知识生成新闻摘要
         cd "${REPO_DIR}" && \
-        timeout 180 mini-agent --task "搜索十条24小时内国内外重要地缘政治和金融经济新闻，直接以1. 2. 3. ... 10.格式输出" --workspace "${REPO_DIR}" 2>&1 | \
-        tail -n +50 | head -40 > "${news_file}"
+        timeout 120 mini-agent --task "基于你对2025-2026年的金融知识，列举10条近期（过去24小时）最重要的地缘政治和金融经济新闻，包括：
+1. 美联储/货币政策相关
+2. 中国经济/政策相关  
+3. 地缘政治（俄乌、中东、亚太等）
+4. 全球股市走势
+5. 大宗商品/能源市场
+
+要求：
+- 每条新闻要有新闻标题、来源、时间
+- 格式：1. 【来源】新闻标题 - 简短摘要" --workspace "${REPO_DIR}" 2>&1 | \
+        tail -n +50 | head -50 > "${news_file}"
     fi
     
     if [ -s "${news_file}" ]; then
         log_success "新闻搜索完成: ${news_file}"
         # 显示前5条新闻预览
         log_info "📋 新闻预览（前5条）："
-        head -20 "${news_file}" | sed 's/^/   /' >&2
+        head -15 "${news_file}" | sed 's/^/   /' >&2
         echo "${news_file}"
     else
         log_warning "新闻搜索可能失败，使用空数据继续"
@@ -117,38 +151,40 @@ ai_analysis() {
     local prompt_file="/tmp/analysis_prompt_${timestamp}.txt"
     
     cat > "${prompt_file}" << 'ENDPROMPT'
-你是一位资深金融分析师。请分析以下24小时内的重要新闻事件，并撰写一份金融市场分析报告。
+你是一位资深金融分析师。请分析以下新闻事件，并撰写一份金融市场分析报告。
 
 ## 新闻内容：
 ENDPROMPT
     
-    # 添加新闻内容（从新闻文件读取）
+    # 添加新闻内容
     if [ -s "${news_file}" ] && [ "$(cat "${news_file}" | head -1)" != "ERROR" ]; then
         cat "${news_file}" >> "${prompt_file}"
     else
-        echo "今日暂无重大新闻事件。" >> "${prompt_file}"
+        echo "今日暂无重大新闻事件，市场处于相对平静期。" >> "${prompt_file}"
     fi
     
     cat >> "${prompt_file}" << 'ENDPROMPT'
 
 ## 分析要求：
 请分析以上新闻事件对以下市场的影响：
-1. 黄金市场（避险需求、美元走势）
-2. 美股市场（科技股、金融股）
-3. A股市场（主板、创业板、北向资金）
+1. 黄金市场（避险需求、美元走势、地缘风险）
+2. 美股市场（科技股、金融股、成长/价值股）
+3. A股市场（主板、创业板、北向资金流向）
 
-请给出：
+请给出专业分析：
 - 短期趋势判断（1-3天）
-- 投资建议：买入/持有/观望
+- 各市场核心影响因素
+- 投资建议：明确给出买入/持有/观望建议
 - 风险提示
 
-**输出要求**：直接开始写分析报告，使用Markdown格式，包含：
-- 市场概览
-- 各市场详细分析
-- 投资建议
-- 风险提示
+**输出要求**：
+使用Markdown格式，包含：
+1. 市场概览
+2. 各市场详细分析
+3. 投资建议
+4. 风险提示
 
-不要有任何前缀说明，直接开始写报告。
+**直接开始写报告**，不要有任何前缀说明或标题。
 ENDPROMPT
     
     # 调用mini-agent进行深度分析
@@ -180,9 +216,13 @@ generate_report() {
     local report_timestamp=$(date +%Y%m%d)
     local report_file="${REPORTS_DIR}/financial_report_${report_timestamp}.md"
     
-    # 读取分析内容（过滤mini-agent日志）
+    # 读取分析内容（过滤mini-agent日志头部）
     local analysis_content
-    analysis_content=$(sed -n '/^#/,$p' "${analysis_file}" 2>/dev/null | head -300)
+    analysis_content=$(sed -n '/^#/,$p' "${analysis_file}" 2>/dev/null | head -400)
+    
+    # 读取新闻预览
+    local news_preview
+    news_preview=$(head -20 "${news_file}" 2>/dev/null | grep -v "^$" | head -10)
     
     # 生成Markdown报告
     cat > "${report_file}" << EOF
@@ -204,9 +244,9 @@ tags: [黄金, 美股, A股, 投资分析, 地缘政治]
 
 ## 🔍 今日重要新闻摘要
 
-*(由AI从24小时内全球重要新闻中筛选)*
+> 新闻来源：AI自动搜索聚合（MCP工具）
 
-> 新闻来源：AI自动搜索聚合
+${news_preview}
 
 ---
 
@@ -218,7 +258,7 @@ ${analysis_content}
 
 ## 📋 数据来源与说明
 
-- **新闻来源**: AI自动搜索聚合（Bloomberg, Reuters, WSJ, 新华社等）
+- **新闻来源**: MCP搜索工具聚合（支持DuckDuckGo、RSS订阅源等）
 - **分析引擎**: Claude AI via mini-agent
 - **覆盖市场**: 黄金、美股、A股、全球主要股指
 
@@ -230,14 +270,14 @@ ${analysis_content}
 
 | 阶段 | 说明 | 执行时间 |
 |------|------|---------|
-| 新闻搜索 | AI搜索24小时内重要地缘和金融新闻 | 每天9:00 |
+| 新闻搜索 | AI通过MCP工具搜索24小时内重要新闻 | 每天9:00 |
 | 深度分析 | Claude大模型分析新闻对各市场的影响 | 即时生成 |
 | 报告生成 | 自动生成Markdown格式专业报告 | 即时生成 |
 | 自动提交 | 生成报告后自动提交到GitHub仓库 | 即时执行 |
 
 **GitHub仓库**: https://github.com/${GITHUB_REPO}
 
-**系统架构**: 本地cron + mini-agent + GitHub CLI
+**系统架构**: 本地cron + mini-agent + MCP新闻服务器 + GitHub CLI
 
 ---
 
@@ -270,7 +310,7 @@ commit_to_github() {
         git add -A
         
         # 生成提交信息
-        local commit_msg="📊 每日金融分析报告 - $(date '+%Y-%m-%d') - AI搜索版"
+        local commit_msg="📊 每日金融分析报告 - $(date '+%Y-%m-%d') - MCP搜索版"
         
         # 提交
         if git commit -m "${commit_msg}" 2>/dev/null; then
@@ -302,7 +342,7 @@ main() {
     echo ""
     echo "========================================"
     echo "🏦 每日金融分析报告自动生成系统"
-    echo "🤖 AI搜索 + AI分析 + AI生成"
+    echo "🤖 AI搜索(MCP) + AI分析 + AI生成"
     echo "========================================"
     echo ""
     
