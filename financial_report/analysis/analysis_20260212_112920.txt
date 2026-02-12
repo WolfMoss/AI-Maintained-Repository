@@ -1,28 +1,40 @@
----
-title: 每日金融市场分析报告
-date: 2026年02月12日
-author: AI Analyst (mini-agent)
-categories: [金融分析, 市场研究]
-tags: [黄金, 美股, A股, 投资分析, 地缘政治]
----
+[32m✅ LLM retry mechanism enabled (max 3 retries)[0m
+[32m✅ Loaded Bash tool[0m
+[32m✅ Loaded Bash Output tool[0m
+[32m✅ Loaded Bash Kill tool[0m
+[96mLoading Claude Skills...[0m
+✅ Discovered 15 Claude Skills
+[32m✅ Loaded Skill tool (get_skill)[0m
+[96mLoading MCP tools...[0m
+[2m  MCP timeouts: connect=10.0s, execute=60.0s, sse_read=120.0s[0m
+Skipping disabled server: minimax_search
+Skipping disabled server: memory
 
-# 📊 每日金融市场分析报告
+Total MCP tools loaded: 0
+[33m⚠️  No available MCP tools found[0m
 
-**报告日期**: 2026年02月12日  
-**生成时间**: 11:29:37 CST  
-**分析引擎**: Claude AI (mini-agent)
+[32m✅ Loaded file operation tools (workspace: /home/moss/workspace/AI-Maintained-Repository)[0m
+[32m✅ Loaded session note tool[0m
+[32m✅ Loaded system prompt (from: /home/moss/.mini-agent/config/system_prompt.md)[0m
+[32m✅ Injected 15 skills metadata into system prompt[0m
 
----
+[1m[96m╔══════════════════════════════════════════════════════════╗[0m
+[1m[96m║[0m      [1m🤖 Mini Agent - Multi-turn Interactive Session[0m      [1m[96m║[0m
+[1m[96m╚══════════════════════════════════════════════════════════╝[0m
 
-## 🔍 今日重要新闻摘要
+[2m┌──────────────────────────────────────────────────────────┐[0m
+[2m│[0m                       [96mSession Info[0m                       [2m│[0m
+[2m├──────────────────────────────────────────────────────────┤[0m
+[2m│[0m Model: MiniMax-M2.1                                      [2m│[0m
+[2m│[0m Workspace: /home/moss/workspace/AI-Maintained-Repository [2m│[0m
+[2m│[0m Message History: 1 messages                              [2m│[0m
+[2m│[0m Available Tools: 8 tools                                 [2m│[0m
+[2m└──────────────────────────────────────────────────────────┘[0m
 
-*(由AI从24小时内全球重要新闻中筛选)*
+[2mType [92m/help[2m for help, [92m/exit[2m to quit[0m
 
-> 新闻来源：AI自动搜索聚合
 
----
-
-## 🧠 AI深度分析
+[96m执行任务（非交互模式）:[0m [97m你是一位资深金融分析师。请分析以下24小时内的重要新闻事件，并撰写一份金融市场分析报告。
 
 ## 新闻内容：
 1. 包含中国、美国、欧洲的重要事件
@@ -125,31 +137,3 @@ Let me respond in Chinese since the user's request is in Chinese, and explain th
 [96mCleaning up MCP connections...[0m
 [32m✅ Cleanup complete[0m
 
----
-
-## 📋 数据来源与说明
-
-- **新闻来源**: AI自动搜索聚合（Bloomberg, Reuters, WSJ, 新华社等）
-- **分析引擎**: Claude AI via mini-agent
-- **覆盖市场**: 黄金、美股、A股、全球主要股指
-
----
-
-## 🔄 自动化说明
-
-本报告由AI全自动化生成：
-
-| 阶段 | 说明 | 执行时间 |
-|------|------|---------|
-| 新闻搜索 | AI搜索24小时内重要地缘和金融新闻 | 每天9:00 |
-| 深度分析 | Claude大模型分析新闻对各市场的影响 | 即时生成 |
-| 报告生成 | 自动生成Markdown格式专业报告 | 即时生成 |
-| 自动提交 | 生成报告后自动提交到GitHub仓库 | 即时执行 |
-
-**GitHub仓库**: https://github.com/WolfMoss/AI-Maintained-Repository
-
-**系统架构**: 本地cron + mini-agent + GitHub CLI
-
----
-
-*报告生成于: 2026-02-12 11:29:37 CST*
