@@ -1,0 +1,38 @@
+
+========================================
+🏦 每日金融分析报告自动生成系统
+🤖 AI搜索(MCP) + AI分析 + AI生成
+========================================
+
+2026-02-13 09:00:01 [INFO] 📰 阶段一：AI搜索最新地缘和金融新闻
+2026-02-13 09:00:01 [INFO] ========================================
+2026-02-13 09:00:01 [INFO] 🔍 正在搜索24小时内重要新闻...
+# MCP News Search Server started
+2026-02-13 09:00:03 [INFO] ✅ MCP新闻服务器已启动
+2026-02-13 09:00:05 [SUCCESS] 新闻搜索完成: /home/moss/workspace/AI-Maintained-Repository/financial_report/data/news_20260213_090001.txt
+2026-02-13 09:00:05 [INFO] 📋 新闻预览（前5条）：
+   1. 【Federal Reserve】美联储利率决议最新进展 - 2026-02-13
+      美联储货币政策最新动态，市场关注利率走势
+      来源: https://www.federalreserve.gov/
+   
+   2. 【中国人民银行】中国央行货币政策操作 - 2026-02-13
+      中国央行公开市场操作最新情况
+      来源: http://www.pbc.gov.cn/
+   
+   3. 【Yahoo Finance】全球股市最新走势 - 2026-02-13
+      美股、欧股、亚洲主要股指表现
+      来源: https://finance.yahoo.com/
+   
+   4. 【Reuters】地缘政治最新消息 - 2026-02-13
+      全球地缘政治热点事件最新进展
+      来源: https://www.reuters.com/
+2026-02-13 09:00:05 [INFO] 🧠 阶段二：AI深度分析市场影响
+2026-02-13 09:00:05 [INFO] ========================================
+2026-02-13 09:00:05 [INFO] 📊 正在分析新闻对黄金、美股、A股的影响...
+2026-02-13 09:00:05 [SUCCESS] AI分析完成: /home/moss/workspace/AI-Maintained-Repository/financial_report/analysis/analysis_20260213_090005.txt
+2026-02-13 09:00:05 [INFO] 📝 阶段三：生成金融分析报告
+2026-02-13 09:00:05 [INFO] ========================================
+2026-02-13 09:00:05 [SUCCESS] 报告生成完成: /home/moss/workspace/AI-Maintained-Repository/financial_report/reports/financial_report_20260213.md
+2026-02-13 09:00:05 [INFO] 📦 阶段四：提交到GitHub
+2026-02-13 09:00:05 [INFO] ========================================
+2026-02-13 09:00:05 [INFO] 发现需要提交的更改
