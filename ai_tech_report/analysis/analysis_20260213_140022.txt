@@ -1,49 +1,3 @@
----
-title: AI技术每日报告
-date: 2026年02月13日
-author: AI Tech Analyst
-tags: [AI, LLM, Machine Learning]
----
-
-# AI技术每日报告
-
-**报告日期**: 2026年02月13日  
-**生成时间**: 14:03:38 CST
-
----
-
-## 今日重点
-
-# AI技术资讯汇总
-
-**获取时间**: 2026-02-13 14:00:22
-
----
-
-## 📚 ArXiv最新论文
-
-### 1. Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
-- **发布时间**: 2026-02-12
-- **链接**: http://arxiv.org/abs/2602.12281v1
-- **作者**: Jacky Kwok, Xilun Zhang, Mengdi Xu
-- **类别**: cs.RO, cs.AI, eess.SY
-
-### 2. Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching
-- **发布时间**: 2026-02-12
-- **链接**: http://arxiv.org/abs/2602.12280v1
-- **作者**: Huai-Hsun Cheng, Siang-Ling Zhang, Yu-Lun Liu
-- **类别**: cs.CV
-
-### 3. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
-- **发布时间**: 2026-02-12
-- **链接**: http://arxiv.org/abs/2602.12279v1
-- **作者**: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan
-- **类别**: cs.CV, cs.AI, cs.LG
-
----
-
-## AI深度分析
-
 # AI技术资讯汇总
 
 **获取时间**: 2026-02-13 14:00:22
@@ -346,28 +300,24 @@ AI技术生态的快速变化也带来了系统性的稳定性风险。GitHub趋
 
 ---
 
-## 示范代码
+*本报告基于2026年2月13日获取的公开信息编制，分析结论反映报告撰写时点的技术状态。AI领域发展迅速，建议定期跟踪最新研究进展以更新评估。*
 
-- **文件**: demo_20260213
-- **类别**: computer_vision
-- **路径**: /home/moss/workspace/AI-Maintained-Repository/ai_tech_report/demo_code/computer_vision/demo_20260213.py
+[2m⏱️  Step 1 completed in 117.93s (total: 117.93s)[0m
 
----
+[2m────────────────────────────────────────────────────────────[0m
 
-## 自动化说明
 
-| 阶段 | 说明 |
-|------|------|
-| 资讯搜索 | AI搜索最新AI资讯（2026年02月13日） |
-| 深度分析 | Claude大模型分析 |
-| 代码生成 | Python示例代码 |
-| 报告生成 | Markdown格式 |
-| 自动提交 | GitHub |
+[1m[96mSession Statistics:[0m
+[2m────────────────────────────────────────[0m
+  Session Duration: 00:01:58
+  Total Messages: 3
+    - User Messages: [92m1[0m
+    - Assistant Replies: [94m1[0m
+    - Tool Calls: [93m0[0m
+  Available Tools: 8
+  API Tokens Used: [95m8,749[0m
+[2m────────────────────────────────────────[0m
 
-**来源**: ArXiv, Hugging Face, AI官方博客
+[96mCleaning up MCP connections...[0m
+[32m✅ Cleanup complete[0m
 
-**GitHub**: https://github.com/WolfMoss/AI-Maintained-Repository
-
----
-
-*生成于: 2026-02-13 14:03:38 CST*

@@ -1,0 +1,147 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-13 14:00:22
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12281v1
+- **作者**: Jacky Kwok, Xilun Zhang, Mengdi Xu
+- **类别**: cs.RO, cs.AI, eess.SY
+
+### 2. Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12280v1
+- **作者**: Huai-Hsun Cheng, Siang-Ling Zhang, Yu-Lun Liu
+- **类别**: cs.CV
+
+### 3. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12279v1
+- **作者**: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan
+- **类别**: cs.CV, cs.AI, cs.LG
+
+### 4. AttentionRetriever: Attention Layers are Secretly Long Document Retrievers
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12278v1
+- **作者**: David Jiahao Fu, Lam Thanh Do, Jiayu Li
+- **类别**: cs.IR, cs.AI
+
+### 5. Agentic Test-Time Scaling for WebAgents
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12276v1
+- **作者**: Nicholas Lee, Lutfi Eren Erdogan, Chris Joseph John
+- **类别**: cs.AI, cs.CL
+
+### 6. On-Policy Context Distillation for Language Models
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12275v1
+- **作者**: Tianzhu Ye, Li Dong, Xun Wu
+- **类别**: cs.CL
+
+### 7. Function-Space Decoupled Diffusion for Forward and Inverse Modeling in Carbon Capture and Storage
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12274v1
+- **作者**: Xin Ju, Jiachen Yao, Anima Anandkumar
+- **类别**: cs.LG, physics.geo-ph
+
+### 8. Learning to Control: The iUzawa-Net for Nonsmooth Optimal Control of Linear PDEs
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12273v1
+- **作者**: Yongcun Song, Xiaoming Yuan, Hangrui Yue
+- **类别**: math.OC, cs.LG, math.NA
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. Show HN: Seedance AShow HN: Seedance AI Video Generation (Next.js, Drizzle)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999394)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://seedanceai2.org/
+
+### 2. 7-Zip 26.00
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999388)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://sourceforge.net/p/sevenzip/discussion/45797/thread/a1f7e08417/
+
+### 3. First Vibecoded AI Operating System
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999367)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://github.com/viralcode/vib-OS
+
+### 4. You're Building Petri Nets. You're Just Building Them Badly
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999339)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://joshtuddenham.dev/blog/petri-nets/
+
+### 5. A recursive and authoritative DNS resolver from scratch in Go
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999307)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://news.ycombinator.com/item?id=46999307
+
+### 6. Three Inverse Laws of AI and Robotics
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999301)
+- **点赞**: 2 | **评论**: 0
+- **原文链接**: https://susam.net/inverse-laws-of-robotics.html
+
+### 7. Quantum Phenomena in Biological Systems(2024)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999298)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.frontiersin.org/journals/quantum-science-and-technology/articles/10.3389/frqst.2024.1466906/full
+
+### 8. Ask HN: Would Steve Jobs Get into YC?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=46999296)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://news.ycombinator.com/item?id=46999296
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 2. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+### 3. Is a secure AI assistant possible?
+- **链接**: https://www.technologyreview.com/2026/02/11/1132768/is-a-secure-ai-assistant-possible/
+- **发布时间**: 2026-02-11
+
+### 4. A “QuitGPT” campaign is urging people to cancel their ChatGPT subscriptions
+- **链接**: https://www.technologyreview.com/2026/02/10/1132577/a-quitgpt-campaign-is-urging-people-to-cancel-chatgpt-subscriptions/
+- **发布时间**: 2026-02-10
+
+### 5. Why the Moltbook frenzy was like Pokémon
+- **链接**: https://www.technologyreview.com/2026/02/09/1132537/a-lesson-from-pokemon/
+- **发布时间**: 2026-02-09
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. ScottT2-spec/mnist-neural-network-
+- **描述**: Neural network built from scratch using only NumPy — 96% accuracy on MNIST. No TensorFlow, no PyTorch, pure math.
+- **⭐ Stars**: 13
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/mnist-neural-network-
+
+### 2. ScottT2-spec/malaria-cell-detection
+- **描述**: CNN-based malaria detection from blood cell microscope images — 95.43% test accuracy on NIH dataset (27,558 images)
+- **⭐ Stars**: 9
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/malaria-cell-detection
+
+### 3. ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+- **描述**: Real-time face recognition system that detects faces, recognizes known users, auto-registers new ones, and predicts age & gender using deep learning. Stores all data for future recognition. Built with Python, OpenCV, and CNN models.
+- **⭐ Stars**: 2
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+
+---
