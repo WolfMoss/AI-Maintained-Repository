@@ -70,6 +70,31 @@ bash cron/daily_report.sh
 
 ---
 
+### 🤖 AI Technology News & Demo Code Generator
+
+**Location**: [`ai_tech_report/`](ai_tech_report/)
+
+**Description**: Automated daily AI technology news search and demo code generation system
+
+**Features**:
+- 🔍 AI-powered news search (ArXiv papers, AI blogs, tech news)
+- 🧠 AI deep analysis of new technology trends
+- 💻 Auto-generated Python/ML demo code
+- 📝 Professional Markdown technology reports
+- 🤖 Fully automated GitHub submission
+
+**Automation**: Daily at 10:00 AM (Asia/Shanghai) via cron
+
+**Quick Start**:
+```bash
+cd ai_tech_report
+bash cron/daily_report.sh
+```
+
+**Documentation**: See [`ai_tech_report/README.md`](ai_tech_report/README.md) for details
+
+---
+
 ## 🔄 Update Mechanism
 
 ### Workflow
@@ -104,6 +129,7 @@ graph TD
 | **Version Control** | Git + GitHub CLI | Code management |
 | **Scheduling** | Linux cron | Automated triggering |
 | **News Search** | MCP + DuckDuckGo + RSS | Real-time information |
+| **Code Generation** | Claude AI + Python | Auto-generate demo code |
 | **Programming** | Python 3.11+ | Core logic |
 
 ### System Architecture
@@ -116,8 +142,8 @@ graph TD
 │  ┌──────────────────┐    ┌──────────────────┐            │
 │  │   Local Cron     │───▶│  AI Agents       │            │
 │  │  (Daily 9:00)    │    │  (mini-agent)    │            │
-│  └──────────────────┘    └────────┬─────────┘            │
-│                                   │                        │
+│  │  (Daily 10:00)  │    └────────┬─────────┘            │
+│  └──────────────────┘             │                        │
 │                                   ▼                        │
 │  ┌──────────────────────────────────────────────────────┐ │
 │  │              GitHub Repository                        │ │
@@ -146,6 +172,20 @@ AI-Maintained-Repository/
 │   │   ├── gold_api.py           # Gold market data
 │   │   ├── stocks_usa_api.py     # US stock data
 │   │   └── stocks_cn_api.py      # China A-share data
+│   ├── 📄 README.md               # Project documentation
+│   └── 📄 requirements.txt        # Python dependencies
+├── 📂 ai_tech_report/             # 🤖 AI Technology News & Demo Code
+│   ├── 📂 cron/                   # Automation scripts
+│   │   ├── daily_report.sh       # Main script (cron job)
+│   │   └── setup_cron.sh         # Cron management
+│   ├── 📂 data/                   # AI news data (auto-generated)
+│   ├── 📂 analysis/               # AI analysis results
+│   ├── 📂 reports/                # Generated technology reports
+│   ├── 📂 demo_code/              # Demo code examples
+│   │   ├── llm_applications/     # LLM application examples
+│   │   ├── computer_vision/      # Computer vision examples
+│   │   ├── nlp/                  # NLP examples
+│   │   └── ml_basics/            # ML basics examples
 │   ├── 📄 README.md               # Project documentation
 │   └── 📄 requirements.txt        # Python dependencies
 ├── 📂 src/                        # Source code
@@ -189,6 +229,9 @@ Although this repository is maintained by AI, we welcome:
 - **Repository**: https://github.com/WolfMoss/AI-Maintained-Repository
 - **Financial Reports**: [financial_report/reports/](financial_report/reports/)
 - **Financial Report Docs**: [financial_report/README.md](financial_report/README.md)
+- **AI Tech Reports**: [ai_tech_report/reports/](ai_tech_report/reports/)
+- **AI Tech Docs**: [ai_tech_report/README.md](ai_tech_report/README.md)
+- **Demo Code**: [ai_tech_report/demo_code/](ai_tech_report/demo_code/)
 
 ---
 
