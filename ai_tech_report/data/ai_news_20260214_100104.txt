@@ -1,0 +1,101 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-14 10:00:01
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12281v1
+- **作者**: Jacky Kwok, Xilun Zhang, Mengdi Xu
+- **类别**: cs.RO, cs.AI, eess.SY
+
+### 2. Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12280v1
+- **作者**: Huai-Hsun Cheng, Siang-Ling Zhang, Yu-Lun Liu
+- **类别**: cs.CV
+
+### 3. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12279v1
+- **作者**: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan
+- **类别**: cs.CV, cs.AI, cs.LG
+
+### 4. AttentionRetriever: Attention Layers are Secretly Long Document Retrievers
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12278v1
+- **作者**: David Jiahao Fu, Lam Thanh Do, Jiayu Li
+- **类别**: cs.IR, cs.AI
+
+### 5. Agentic Test-Time Scaling for WebAgents
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12276v1
+- **作者**: Nicholas Lee, Lutfi Eren Erdogan, Chris Joseph John
+- **类别**: cs.AI, cs.CL
+
+### 6. On-Policy Context Distillation for Language Models
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12275v1
+- **作者**: Tianzhu Ye, Li Dong, Xun Wu
+- **类别**: cs.CL
+
+### 7. Function-Space Decoupled Diffusion for Forward and Inverse Modeling in Carbon Capture and Storage
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12274v1
+- **作者**: Xin Ju, Jiachen Yao, Anima Anandkumar
+- **类别**: cs.LG, physics.geo-ph
+
+### 8. Learning to Control: The iUzawa-Net for Nonsmooth Optimal Control of Linear PDEs
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12273v1
+- **作者**: Yongcun Song, Xiaoming Yuan, Hangrui Yue
+- **类别**: math.OC, cs.LG, math.NA
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. Spatial workspace with AI agent, browser, and design editor on infinite canvas
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010715)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://www.sideprojectors.com/project/73595/spaco-a-spatial-workspace
+
+### 2. Ask HN: Anyone else finding the new Gemini Deep Think troublingly sycophantic?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010672)
+- **点赞**: 2 | **评论**: 0
+- **原文链接**: https://news.ycombinator.com/item?id=47010672
+
+### 3. Uncovering Claude Code's –Teleport Flag Revealed
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010662)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://blog.starbased.net/uncovering-claude-codes-hidden-teleport-flag
+
+### 4. Show HN: Skybolt Reflect – C++ header-only runtime reflection library
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010656)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://github.com/Prograda/skybolt-reflect
+
+### 5. JavaScript Bundles Are Why LLMs Can Think
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010644)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://gemini.google.com/share/1fc538510c8f
+
+### 6. To Stay in Her Home, She Let in an A.I. Robot
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010609)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.nytimes.com/2026/02/12/us/elliq-ai-robot-senior-companion.html
+
+### 7. Sanae Takaichi Has Everyone Shutting Up
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010598)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.bloomberg.com/opinion/articles/2026-02-13/sanae-takaichi-has-everyone-shutting-up
+
+### 8. Elon Musk Wants to Build an A.I. Satellite Factory on the Moon
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47010552)
+- **点赞**: 3 | **评论**: 1
+- **原文链接**: https://www.nytimes.com/2026/02/10/technology/elon-musk-lunar-factory.html
+
+---
