@@ -9,6 +9,9 @@
 # - 本地cron定时触发
 #===============================================================================
 
+# 修复cron环境下PATH问题
+export PATH="/home/moss/.local/bin:$PATH"
+
 #-------------------------- 配置区域 --------------------------
 REPO_DIR="/home/moss/workspace/AI-Maintained-Repository"
 REPORTS_DIR="${REPO_DIR}/financial_report/reports"
@@ -193,7 +196,8 @@ ENDPROMPT
     # 清理临时文件
     rm -f "${prompt_file}"
     
-    if [ -s "${analysis_file}" ]; then
+    # 检查分析是否成功（排除错误信息）
+    if [ -s "${analysis_file}" ] && ! grep -qE "failed to run command|No such file or directory|command not found" "${analysis_file}" 2>/dev/null; then
         log_success "AI分析完成: ${analysis_file}"
         echo "${analysis_file}"
     else

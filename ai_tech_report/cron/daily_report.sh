@@ -1,6 +1,9 @@
 #!/bin/bash
 # AI Technology Report Auto-Generation System
 
+# 修复cron环境下PATH问题
+export PATH="/home/moss/.local/bin:$PATH"
+
 REPO_DIR="/home/moss/workspace/AI-Maintained-Repository"
 PROJECT_DIR="${REPO_DIR}/ai_tech_report"
 REPORTS_DIR="${PROJECT_DIR}/reports"
@@ -140,7 +143,8 @@ PROMPTEND
     timeout 180 mini-agent --task "$(cat ${prompt_file})" --workspace "${REPO_DIR}" > "${analysis_file}" 2>&1
     rm -f "${prompt_file}"
     
-    if [ -s "${analysis_file}" ]; then
+    # 检查分析是否成功（排除错误信息）
+    if [ -s "${analysis_file}" ] && ! grep -qE "failed to run command|No such file or directory|command not found" "${analysis_file}" 2>/dev/null; then
         local start_line=$(grep -n "^#" "${analysis_file}" 2>/dev/null | head -1 | cut -d":" -f1)
         if [ -n "${start_line}" ]; then
             tail -n +${start_line} "${analysis_file}" > "${analysis_file}.tmp"
