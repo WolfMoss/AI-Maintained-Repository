@@ -1,0 +1,147 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-15 10:00:01
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12281v1
+- **作者**: Jacky Kwok, Xilun Zhang, Mengdi Xu
+- **类别**: cs.RO, cs.AI, eess.SY
+
+### 2. Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12280v1
+- **作者**: Huai-Hsun Cheng, Siang-Ling Zhang, Yu-Lun Liu
+- **类别**: cs.CV
+
+### 3. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12279v1
+- **作者**: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan
+- **类别**: cs.CV, cs.AI, cs.LG
+
+### 4. AttentionRetriever: Attention Layers are Secretly Long Document Retrievers
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12278v1
+- **作者**: David Jiahao Fu, Lam Thanh Do, Jiayu Li
+- **类别**: cs.IR, cs.AI
+
+### 5. Agentic Test-Time Scaling for WebAgents
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12276v1
+- **作者**: Nicholas Lee, Lutfi Eren Erdogan, Chris Joseph John
+- **类别**: cs.AI, cs.CL
+
+### 6. On-Policy Context Distillation for Language Models
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12275v1
+- **作者**: Tianzhu Ye, Li Dong, Xun Wu
+- **类别**: cs.CL
+
+### 7. Function-Space Decoupled Diffusion for Forward and Inverse Modeling in Carbon Capture and Storage
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12274v1
+- **作者**: Xin Ju, Jiachen Yao, Anima Anandkumar
+- **类别**: cs.LG, physics.geo-ph
+
+### 8. Learning to Control: The iUzawa-Net for Nonsmooth Optimal Control of Linear PDEs
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12273v1
+- **作者**: Yongcun Song, Xiaoming Yuan, Hangrui Yue
+- **类别**: math.OC, cs.LG, math.NA
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. How to Solve the Tenor Shortage
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020370)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.economist.com/leaders/2026/02/12/how-to-solve-the-tenor-shortage
+
+### 2. What does the formation of a black hole look like? [video]
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020359)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.youtube.com/watch?v=oRSmMDH11Ss
+
+### 3. Show HN: HareBoy – A Game Boy emulator written in Hare
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020348)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://github.com/drpaneas/hareboy
+
+### 4. Underwear optional? The health pros and cons of going commando
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020339)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.theguardian.com/wellness/2026/feb/10/underwear-commando-pros-cons
+
+### 5. Updated GitHub status page experience
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020334)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://github.blog/changelog/2026-02-13-updated-status-experience/
+
+### 6. The terrifying and efficient world of Olympic ski airlifts
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020313)
+- **点赞**: 2 | **评论**: 1
+- **原文链接**: https://www.latimes.com/sports/olympics/story/2026-02-13/inside-terrifying-efficient-world-of-olympic-ski-airlifts
+
+### 7. Four new astronauts arrive via SpaceX rocket at International Space Station
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020311)
+- **点赞**: 2 | **评论**: 0
+- **原文链接**: https://www.theguardian.com/science/2026/feb/14/international-space-station-full-crew
+
+### 8. What happens when you put Claude, GPT, Grok, and DeepSeek in the same room?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47020283)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://warpmode.io
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 2. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+### 3. Is a secure AI assistant possible?
+- **链接**: https://www.technologyreview.com/2026/02/11/1132768/is-a-secure-ai-assistant-possible/
+- **发布时间**: 2026-02-11
+
+### 4. A “QuitGPT” campaign is urging people to cancel their ChatGPT subscriptions
+- **链接**: https://www.technologyreview.com/2026/02/10/1132577/a-quitgpt-campaign-is-urging-people-to-cancel-chatgpt-subscriptions/
+- **发布时间**: 2026-02-10
+
+### 5. Why the Moltbook frenzy was like Pokémon
+- **链接**: https://www.technologyreview.com/2026/02/09/1132537/a-lesson-from-pokemon/
+- **发布时间**: 2026-02-09
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. ScottT2-spec/mnist-neural-network-
+- **描述**: Neural network from scratch (NumPy only, 96% accuracy) + Kaggle Digit Recognizer competition entry (99.685% accuracy, top 40). No frameworks for the from-scratch version.
+- **⭐ Stars**: 15
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/mnist-neural-network-
+
+### 2. ScottT2-spec/malaria-cell-detection
+- **描述**: CNN-based malaria detection from blood cell microscope images — 95.43% test accuracy on NIH dataset (27,558 images)
+- **⭐ Stars**: 11
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/malaria-cell-detection
+
+### 3. ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+- **描述**: Real-time face recognition system that detects faces, recognizes known users, auto-registers new ones, and predicts age & gender using deep learning. Stores all data for future recognition. Built with Python, OpenCV, and CNN models.
+- **⭐ Stars**: 2
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+
+---
