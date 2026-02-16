@@ -1,0 +1,147 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-16 10:00:01
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12281v1
+- **作者**: Jacky Kwok, Xilun Zhang, Mengdi Xu
+- **类别**: cs.RO, cs.AI, eess.SY
+
+### 2. Stroke of Surprise: Progressive Semantic Illusions in Vector Sketching
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12280v1
+- **作者**: Huai-Hsun Cheng, Siang-Ling Zhang, Yu-Lun Liu
+- **类别**: cs.CV
+
+### 3. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12279v1
+- **作者**: Leon Liangyu Chen, Haoyu Ma, Zhipeng Fan
+- **类别**: cs.CV, cs.AI, cs.LG
+
+### 4. AttentionRetriever: Attention Layers are Secretly Long Document Retrievers
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12278v1
+- **作者**: David Jiahao Fu, Lam Thanh Do, Jiayu Li
+- **类别**: cs.IR, cs.AI
+
+### 5. Agentic Test-Time Scaling for WebAgents
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12276v1
+- **作者**: Nicholas Lee, Lutfi Eren Erdogan, Chris Joseph John
+- **类别**: cs.AI, cs.CL
+
+### 6. On-Policy Context Distillation for Language Models
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12275v1
+- **作者**: Tianzhu Ye, Li Dong, Xun Wu
+- **类别**: cs.CL
+
+### 7. Function-Space Decoupled Diffusion for Forward and Inverse Modeling in Carbon Capture and Storage
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12274v1
+- **作者**: Xin Ju, Jiachen Yao, Anima Anandkumar
+- **类别**: cs.LG, physics.geo-ph
+
+### 8. Learning to Control: The iUzawa-Net for Nonsmooth Optimal Control of Linear PDEs
+- **发布时间**: 2026-02-12
+- **链接**: http://arxiv.org/abs/2602.12273v1
+- **作者**: Yongcun Song, Xiaoming Yuan, Hangrui Yue
+- **类别**: math.OC, cs.LG, math.NA
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. I built a 3D racing engine that runs on an ESP32-S3 (8MB PSRAM)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47030039)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://medium.com/@davidmonterocrespo24/how-i-built-the-first-3d-racing-game-for-esp32-s3-because-someone-said-ai-could-do-it-better-50236a02286f
+
+### 2. AI Agents Are Making Software More Like Biology
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47030026)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://twitter.com/pablofariasnew/status/2023212613015150657
+
+### 3. Old School Telecine, circa 1980s (2017)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47029999)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.liftgammagain.com/forum/index.php?threads/old-school-telecine-circa-1980s.9984/
+
+### 4. Keep screenshots/automation working while the MacBook lid is closed
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47029984)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://news.ycombinator.com/item?id=47029984
+
+### 5. Forbes 250 Americas greatest innovators
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47029976)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.forbes.com/sites/alexknapp/2026/02/11/forbes-250-americas-greatest-innovators
+
+### 6. I made the first iMessage API that can change chat background
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47029967)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://github.com/photon-hq/advanced-imessage-kit/blob/main/examples/background-set.ts
+
+### 7. Technical Update and Correct Live Link
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47029958)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://unheededly-unmouthed-tawanda.ngrok-free.dev
+
+### 8. Non-globally-rigid inversive-distance circle packings [pdf]
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47029956)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://w3.cs.jmu.edu/bowersjc/files/BowersCirclePackingTalk_ICMS2016.pdf
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 2. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+### 3. Is a secure AI assistant possible?
+- **链接**: https://www.technologyreview.com/2026/02/11/1132768/is-a-secure-ai-assistant-possible/
+- **发布时间**: 2026-02-11
+
+### 4. A “QuitGPT” campaign is urging people to cancel their ChatGPT subscriptions
+- **链接**: https://www.technologyreview.com/2026/02/10/1132577/a-quitgpt-campaign-is-urging-people-to-cancel-chatgpt-subscriptions/
+- **发布时间**: 2026-02-10
+
+### 5. Why the Moltbook frenzy was like Pokémon
+- **链接**: https://www.technologyreview.com/2026/02/09/1132537/a-lesson-from-pokemon/
+- **发布时间**: 2026-02-09
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. ScottT2-spec/malaria-cell-detection
+- **描述**: CNN-based malaria detection from blood cell microscope images — 95.43% test accuracy on NIH dataset (27,558 images)
+- **⭐ Stars**: 11
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/malaria-cell-detection
+
+### 2. Huzzi-10/PiLENS-Real-Time-AI-Based-Suspicious-Activity-Detection-with-NightVision-on-Raspberry-Pi
+- **描述**: PiLENS-Ai__based Suspicious Activity Detection System using Deep Learning Models and Computer Vision
+- **⭐ Stars**: 3
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/Huzzi-10/PiLENS-Real-Time-AI-Based-Suspicious-Activity-Detection-with-NightVision-on-Raspberry-Pi
+
+### 3. ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+- **描述**: Real-time face recognition system that detects faces, recognizes known users, auto-registers new ones, and predicts age & gender using deep learning. Stores all data for future recognition. Built with Python, OpenCV, and CNN models.
+- **⭐ Stars**: 2
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+
+---
