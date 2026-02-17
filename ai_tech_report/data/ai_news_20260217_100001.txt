@@ -1,0 +1,147 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-17 10:00:02
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. Imitating What Works: Simulation-Filtered Modular Policy Learning from Human Videos
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13197v1
+- **作者**: Albert J. Zhai, Kuo-Hao Zeng, Jiasen Lu
+- **类别**: cs.RO, cs.CV, cs.LG
+
+### 2. Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13195v1
+- **作者**: Aadarsh Sahoo, Georgia Gkioxari
+- **类别**: cs.CV
+
+### 3. Semantic Chunking and the Entropy of Natural Language
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13194v1
+- **作者**: Weishun Zhong, Doron Sivan, Tankut Can
+- **类别**: cs.CL, cond-mat.dis-nn, cond-mat.stat-mech
+
+### 4. Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical Control
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13193v1
+- **作者**: William Chen, Jagdeep Singh Bhatia, Catherine Glossop
+- **类别**: cs.RO
+
+### 5. CoPE-VideoLM: Codec Primitives For Efficient Video Language Models
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13191v1
+- **作者**: Sayan Deb Sarkar, Rémi Pautrat, Ondrej Miksik
+- **类别**: cs.CV, cs.AI, cs.CL
+
+### 6. FlexAM: Flexible Appearance-Motion Decomposition for Versatile Video Generation Control
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13185v1
+- **作者**: Mingzhi Sheng, Zekai Gu, Peng Li
+- **类别**: cs.CV, cs.GR
+
+### 7. Selection of CMIP6 Models for Regional Precipitation Projection and Climate Change Assessment in the Jhelum and Chenab River Basins
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13181v1
+- **作者**: Saad Ahmed Jamal, Ammara Nusrat, Muhammad Azmat
+- **类别**: physics.ao-ph, cs.LG
+
+### 8. Fix Before Search: Benchmarking Agentic Query Visual Pre-processing in Multimodal Retrieval-augmented Generation
+- **发布时间**: 2026-02-13
+- **链接**: http://arxiv.org/abs/2602.13179v1
+- **作者**: Jiankun Zhang, Shenglai Zeng, Kai Guo
+- **类别**: cs.IR
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. An AI CEO said something honest: ExperiencedDevs
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042788)
+- **点赞**: 2 | **评论**: 0
+- **原文链接**: https://old.reddit.com/r/ExperiencedDevs/comments/1r6olcv/an_ai_ceo_finally_said_something_honest/
+
+### 2. Finding forall-exists Hyperbugs using Symbolic Execution
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042779)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://dl.acm.org/doi/full/10.1145/3689761
+
+### 3. Amazon van gets stuck on Britain's 'most dangerous' mudflat path
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042777)
+- **点赞**: 1 | **评论**: 1
+- **原文链接**: https://www.theguardian.com/uk-news/2026/feb/16/amazon-van-stuck-britain-mudflat-path-broomway-thames-estuary
+
+### 4. 25 Years of All Your Base Are Belong to Us (Slightly Remastered)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042774)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.youtube.com/watch?v=orY1RztncqE
+
+### 5. Thinking Hard Burns Almost No Calories–But Destroys Your Next Workout
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042766)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://vo2maxpro.com/blog/thinking-hard-burns-no-calories-destroys-workout
+
+### 6. Show HN: An Open-source React UI library for ASCII animations
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042761)
+- **点赞**: 2 | **评论**: 1
+- **原文链接**: https://github.com/zeke-john/rune
+
+### 7. Ask HN: How's Business These Days for Fiverr Freelancers?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042759)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://news.ycombinator.com/item?id=47042759
+
+### 8. Show HN: I graded 234 stocks on free cash flow (not earnings)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47042751)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://aureus-swart.vercel.app
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 2. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+### 3. Is a secure AI assistant possible?
+- **链接**: https://www.technologyreview.com/2026/02/11/1132768/is-a-secure-ai-assistant-possible/
+- **发布时间**: 2026-02-11
+
+### 4. A “QuitGPT” campaign is urging people to cancel their ChatGPT subscriptions
+- **链接**: https://www.technologyreview.com/2026/02/10/1132577/a-quitgpt-campaign-is-urging-people-to-cancel-chatgpt-subscriptions/
+- **发布时间**: 2026-02-10
+
+### 5. Why the Moltbook frenzy was like Pokémon
+- **链接**: https://www.technologyreview.com/2026/02/09/1132537/a-lesson-from-pokemon/
+- **发布时间**: 2026-02-09
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. ScottT2-spec/malaria-cell-detection
+- **描述**: CNN-based malaria detection from blood cell microscope images — 95.43% test accuracy on NIH dataset (27,558 images)
+- **⭐ Stars**: 11
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/malaria-cell-detection
+
+### 2. Huzzi-10/PiLENS-Real-Time-AI-Based-Suspicious-Activity-Detection-with-NightVision-on-Raspberry-Pi
+- **描述**: PiLENS-Ai__based Suspicious Activity Detection System using Deep Learning Models and Computer Vision
+- **⭐ Stars**: 3
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/Huzzi-10/PiLENS-Real-Time-AI-Based-Suspicious-Activity-Detection-with-NightVision-on-Raspberry-Pi
+
+### 3. ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+- **描述**: Real-time face recognition system that detects faces, recognizes known users, auto-registers new ones, and predicts age & gender using deep learning. Stores all data for future recognition. Built with Python, OpenCV, and CNN models.
+- **⭐ Stars**: 2
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+
+---
