@@ -1,0 +1,147 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-18 10:00:02
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15031v1
+- **作者**: Yehonathan Litman, Shikun Liu, Dario Seyb
+- **类别**: cs.CV
+
+### 2. Image Generation with a Sphere Encoder
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15030v1
+- **作者**: Kaiyu Yue, Menglin Jia, Ji Hou
+- **类别**: cs.CV
+
+### 3. Symmetry in language statistics shapes the geometry of model representations
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15029v1
+- **作者**: Dhruva Karkada, Daniel J. Korchinski, Andres Nava
+- **类别**: cs.LG, cond-mat.dis-nn, cs.CL
+
+### 4. Long Context, Less Focus: A Scaling Gap in LLMs Revealed through Privacy and Personalization
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15028v1
+- **作者**: Shangding Gu
+- **类别**: cs.LG, cs.AI
+
+### 5. Rethinking Diffusion Models with Symmetries through Canonicalization with Applications to Molecular Graph Generation
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15022v1
+- **作者**: Cai Zhou, Zijie Chen, Zian Li
+- **类别**: cs.LG, cs.AI, math.GR
+
+### 6. Generalization from Low- to Moderate-Resolution Spectra with Neural Networks for Stellar Parameter Estimation: A Case Study with DESI
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15021v1
+- **作者**: Xiaosheng Zhao, Yuan-Sen Ting, Rosemary F. G. Wyse
+- **类别**: astro-ph.SR, astro-ph.GA, cs.LG
+
+### 7. Hunt Globally: Deep Research AI Agents for Drug Asset Scouting in Investing, Business Development, and Search & Evaluation
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15019v1
+- **作者**: Alisa Vinogradova, Vlad Vinogradov, Luba Greenwood
+- **类别**: cs.AI, cs.IR
+
+### 8. Neurosim: A Fast Simulator for Neuromorphic Robot Perception
+- **发布时间**: 2026-02-16
+- **链接**: http://arxiv.org/abs/2602.15018v1
+- **作者**: Richeek Das, Pratik Chaudhari
+- **类别**: cs.RO, cs.CV
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. The government wants AI doctors
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056132)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.empirical.health/blog/the-government-wants-ai-doctors/
+
+### 2. Beyond SpaceX: The next up and coming aerospace companies
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056115)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://forgeglobal.com/insights/beyond-spacex-the-next-up-and-coming-aerospace-companies/
+
+### 3. Beware China's shrinking car market
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056105)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.economist.com/business/2026/02/17/beware-chinas-shrinking-car-market
+
+### 4. The financialisation of AI is just beginning
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056097)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.economist.com/finance-and-economics/2026/02/17/the-financialisation-of-ai-is-just-beginning
+
+### 5. Plasma 6.6 Released
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056092)
+- **点赞**: 2 | **评论**: 0
+- **原文链接**: https://kde.org/announcements/plasma/6/6.6.0/
+
+### 6. A.I. Is Making Doctors Answer a Question: What Are They Good For?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056085)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.nytimes.com/2026/02/09/health/ai-chatbots-doctors-medicine.html
+
+### 7. The Last Free Place
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056062)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://mountaingazette.com/blogs/mountain-notes/turning-the-page-in-truckee-the-last-free-place
+
+### 8. Will we become gut bacteria for AI? (2017)
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47056049)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://jonathannen.com/from-the-gut
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 2. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+### 3. Is a secure AI assistant possible?
+- **链接**: https://www.technologyreview.com/2026/02/11/1132768/is-a-secure-ai-assistant-possible/
+- **发布时间**: 2026-02-11
+
+### 4. A “QuitGPT” campaign is urging people to cancel their ChatGPT subscriptions
+- **链接**: https://www.technologyreview.com/2026/02/10/1132577/a-quitgpt-campaign-is-urging-people-to-cancel-chatgpt-subscriptions/
+- **发布时间**: 2026-02-10
+
+### 5. Why the Moltbook frenzy was like Pokémon
+- **链接**: https://www.technologyreview.com/2026/02/09/1132537/a-lesson-from-pokemon/
+- **发布时间**: 2026-02-09
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. ScottT2-spec/malaria-cell-detection
+- **描述**: CNN-based malaria detection from blood cell microscope images — 95.43% test accuracy on NIH dataset (27,558 images)
+- **⭐ Stars**: 11
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/malaria-cell-detection
+
+### 2. Huzzi-10/PiLENS-Real-Time-AI-Based-Suspicious-Activity-Detection-with-NightVision-on-Raspberry-Pi
+- **描述**: PiLENS-Ai__based Suspicious Activity Detection System using Deep Learning Models and Computer Vision
+- **⭐ Stars**: 3
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/Huzzi-10/PiLENS-Real-Time-AI-Based-Suspicious-Activity-Detection-with-NightVision-on-Raspberry-Pi
+
+### 3. ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+- **描述**: Real-time face recognition system that detects faces, recognizes known users, auto-registers new ones, and predicts age & gender using deep learning. Stores all data for future recognition. Built with Python, OpenCV, and CNN models.
+- **⭐ Stars**: 2
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ahsamhamiya59295-dev/real-time-face-recognition-age-gender-opencv-python
+
+---
