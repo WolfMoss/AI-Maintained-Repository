@@ -1,0 +1,135 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-19 10:00:01
+
+---
+
+## 📚 ArXiv最新论文
+
+### 1. Ensemble-size-dependence of deep-learning post-processing methods that minimize an (un)fair score: motivating examples and a proof-of-concept solution
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15830v1
+- **作者**: Christopher David Roberts
+- **类别**: physics.ao-ph, cs.LG
+
+### 2. Operationalising the Superficial Alignment Hypothesis via Task Complexity
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15829v1
+- **作者**: Tomás Vergara-Browne, Darshan Patil, Ivan Titov
+- **类别**: cs.LG
+
+### 3. Dex4D: Task-Agnostic Point Track Policy for Sim-to-Real Dexterous Manipulation
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15828v1
+- **作者**: Yuxuan Kuang, Sungjae Park, Katerina Fragkiadaki
+- **类别**: cs.RO, cs.CV, cs.LG
+
+### 4. Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15827v1
+- **作者**: Zhen Wu, Xiaoyu Huang, Lujie Yang
+- **类别**: cs.RO, cs.AI, cs.LG
+
+### 5. CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15823v1
+- **作者**: Zarif Ikram, Arad Firouzkouhi, Stephen Tu
+- **类别**: cs.LG, cs.AI
+
+### 6. Stabilizing Test-Time Adaptation of High-Dimensional Simulation Surrogates via D-Optimal Statistics
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15820v1
+- **作者**: Anna Zimmel, Paul Setinek, Gianluca Galletti
+- **类别**: cs.LG
+
+### 7. VideoSketcher: Video Models Prior Enable Versatile Sequential Sketch Generation
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15819v1
+- **作者**: Hui Ren, Yuval Alaluf, Omer Bar Tal
+- **类别**: cs.CV
+
+### 8. Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning
+- **发布时间**: 2026-02-17
+- **链接**: http://arxiv.org/abs/2602.15817v1
+- **作者**: Oswin So, Eric Yang Yu, Songyuan Zhang
+- **类别**: cs.LG, cs.RO, math.OC
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. Show HN: Pinggy – a fun app to share what you're doing in just one word
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068957)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://pinggy.com
+
+### 2. Minecraft Java is switching from OpenGL to Vulkan
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068948)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.gamingonlinux.com/2026/02/minecraft-java-is-switching-from-opengl-to-vulkan-for-the-vibrant-visuals-update/
+
+### 3. AI pioneer Fei-Fei Li's World Labs raises $1B in funding
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068944)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://finance.yahoo.com/news/ai-pioneer-fei-fei-lis-202957884.html
+
+### 4. Nearly half of L.A. County's pavement may be unnecessary, new map finds
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068935)
+- **点赞**: 2 | **评论**: 1
+- **原文链接**: https://www.latimes.com/environment/story/2026-02-16/nearly-half-of-l-a-countys-pavement-may-be-unnecessary-new-map-finds
+
+### 5. Grandpa Lissajous – A 13-Agent AI Orchestration Loop
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068917)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://blog.sauhsoj.wtf/posts/the-grandpa-loop/
+
+### 6. Ask HN: Anyone else tired of working in tech?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068900)
+- **点赞**: 3 | **评论**: 1
+- **原文链接**: https://news.ycombinator.com/item?id=47068900
+
+### 7. Golden Age of Web Design
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068897)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.webdesignmuseum.org/golden-age-of-web-design
+
+### 8. The quirky geology behind Olympic curling stones
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47068889)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.scientificamerican.com/article/the-quirky-geology-behind-olympic-curling-stones/
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. Google DeepMind wants to know if chatbots are just virtue signaling
+- **链接**: https://www.technologyreview.com/2026/02/18/1133299/google-deepmind-wants-to-know-if-chatbots-are-just-virtue-signaling/
+- **发布时间**: 2026-02-18
+
+### 2. The robots who predict the future
+- **链接**: https://www.technologyreview.com/2026/02/18/1132579/robots-predict-future-book-review/
+- **发布时间**: 2026-02-18
+
+### 3. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 4. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+### 5. Is a secure AI assistant possible?
+- **链接**: https://www.technologyreview.com/2026/02/11/1132768/is-a-secure-ai-assistant-possible/
+- **发布时间**: 2026-02-11
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. ScottT2-spec/malaria-cell-detection
+- **描述**: CNN-based malaria detection from blood cell microscope images — 95.43% test accuracy on NIH dataset (27,558 images)
+- **⭐ Stars**: 14
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/ScottT2-spec/malaria-cell-detection
+
+---
