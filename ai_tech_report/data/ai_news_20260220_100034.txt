@@ -1,0 +1,107 @@
+# AI技术资讯汇总
+
+**获取时间**: 2026-02-20 10:00:02
+
+---
+
+## 💬 Hacker News热门讨论
+
+### 1. Rebuilding the American Dream, One Row House at a Time
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082724)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.thefp.com/p/rebuilding-the-american-dream-one
+
+### 2. Why Traditional DLP Fails in the Age of LLMs
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082722)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://chris-s-lambert.com/why-traditional-dlp-fails-llms.html
+
+### 3. There Are Fewer Excuses
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082701)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://ctts.substack.com/p/there-are-fewer-excuses
+
+### 4. NASA’s Artist’s Cooperation Program
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082697)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://airandspace.si.edu/explore/stories/nasa-art-program
+
+### 5. Ask HN: What is the future of open source?
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082674)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://news.ycombinator.com/item?id=47082674
+
+### 6. RaidenFTPD
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082671)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://www.raidenftpd.com/en/
+
+### 7. Skills Manager
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082666)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://github.com/razbakov/skills-manager
+
+### 8. Lords of the Ring: The cultural politics of sumo wrestling
+- **来源**: [Hacker News](https://news.ycombinator.com/item?id=47082654)
+- **点赞**: 1 | **评论**: 0
+- **原文链接**: https://harpers.org/archive/2026/03/lords-of-the-ring-joshua-hunt-cultural-politics-sumo-wrestling/
+
+---
+
+## 📖 MIT Technology Review
+
+### 1. Microsoft has a new plan to prove what’s real and what’s AI online
+- **链接**: https://www.technologyreview.com/2026/02/19/1133360/microsoft-has-a-new-plan-to-prove-whats-real-and-whats-ai-online/
+- **发布时间**: 2026-02-19
+
+### 2. Google DeepMind wants to know if chatbots are just virtue signaling
+- **链接**: https://www.technologyreview.com/2026/02/18/1133299/google-deepmind-wants-to-know-if-chatbots-are-just-virtue-signaling/
+- **发布时间**: 2026-02-18
+
+### 3. The robots who predict the future
+- **链接**: https://www.technologyreview.com/2026/02/18/1132579/robots-predict-future-book-review/
+- **发布时间**: 2026-02-18
+
+### 4. AI is already making online crimes easier. It could get much worse.
+- **链接**: https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/
+- **发布时间**: 2026-02-12
+
+### 5. What’s next for Chinese open-source AI
+- **链接**: https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/
+- **发布时间**: 2026-02-12
+
+---
+
+## ⭐ GitHub趋势项目
+
+### 1. HeadOverBall/Emergency-Vehicle-routing-system
+- **描述**: This project proposes an AI-driven traffic management system for Emergency Vehicles (EVs) that combines machine learning, deep learning, and graph-based routing to ensure faster and uninterrupted travel.
+- **⭐ Stars**: 1
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/HeadOverBall/Emergency-Vehicle-routing-system
+
+### 2. Jayaprathap10/ai-road-accident-detection
+- **描述**: Real-time AI road accident detection using YOLOv8 and CNN with Telegram alerts
+- **⭐ Stars**: 1
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/Jayaprathap10/ai-road-accident-detection
+
+### 3. reyanshkalra2011-coder/AI-sign-language-translator
+- **描述**: Dual cnn and lstm models integrated
+- **⭐ Stars**: 1
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/reyanshkalra2011-coder/AI-sign-language-translator
+
+### 4. LEO103112/ai-learning-projects
+- **描述**: AI and Machine Learning Projects: Dashboard, NLP, Deep Learning
+- **⭐ Stars**: 0
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/LEO103112/ai-learning-projects
+
+### 5. akshaynaik01/AI-Learning-Hub
+- **描述**: Comprehensive AI learning repository with machine learning algorithms, neural networks, deep learning models, and practical AI projects for educational purposes.
+- **⭐ Stars**: 0
+- **🔤 语言**: Python
+- **🔗 链接**: https://github.com/akshaynaik01/AI-Learning-Hub
+
+---
