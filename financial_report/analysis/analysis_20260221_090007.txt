@@ -1,0 +1,54 @@
+Function _make_api_request call 1 failed: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e8369cc745c19891fb38d3be58ac6c'}, retrying attempt 2 after 1.00 seconds
+Function _make_api_request call 2 failed: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e8369eb6df90a5ee0190e6d1ee9f45'}, retrying attempt 3 after 2.00 seconds
+Function _make_api_request call 3 failed: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e836a2a2743600ae55114ddba1b735'}, retrying attempt 4 after 4.00 seconds
+Function _make_api_request retry failed, reached maximum retry count 3
+[32m✅ LLM retry mechanism enabled (max 3 retries)[0m
+[32m✅ Loaded Bash Output tool[0m
+[32m✅ Loaded Bash Kill tool[0m
+[96mLoading Claude Skills...[0m
+✅ Discovered 15 Claude Skills
+[32m✅ Loaded Skill tool (get_skill)[0m
+[96mLoading MCP tools...[0m
+[2m  MCP timeouts: connect=10.0s, execute=60.0s, sse_read=120.0s[0m
+Skipping disabled server: minimax_search
+Skipping disabled server: memory
+
+Total MCP tools loaded: 0
+[33m⚠️  No available MCP tools found[0m
+
+[32m✅ Loaded Bash tool (cwd: /home/moss/workspace/AI-Maintained-Repository)[0m
+[32m✅ Loaded file operation tools (workspace: /home/moss/workspace/AI-Maintained-Repository)[0m
+[32m✅ Loaded session note tool[0m
+[32m✅ Loaded system prompt (from: /home/moss/.mini-agent/config/system_prompt.md)[0m
+[32m✅ Injected 15 skills metadata into system prompt[0m
+
+[94mAgent[0m [2m›[0m [2mExecuting task...[0m
+
+[2m📝 Log file: /home/moss/.mini-agent/log/agent_run_20260221_090009.log[0m
+
+[2m╭──────────────────────────────────────────────────────────╮[0m
+[2m│[0m [1m[96m💭 Step 1/50[0m                                             [2m│[0m
+[2m╰──────────────────────────────────────────────────────────╯[0m
+
+[93m⚠️  LLM call failed (attempt 1): Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e8369cc745c19891fb38d3be58ac6c'}[0m
+[2m   Retrying in 1.0s (attempt 2)...[0m
+
+[93m⚠️  LLM call failed (attempt 2): Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e8369eb6df90a5ee0190e6d1ee9f45'}[0m
+[2m   Retrying in 2.0s (attempt 3)...[0m
+
+[93m⚠️  LLM call failed (attempt 3): Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e836a2a2743600ae55114ddba1b735'}[0m
+[2m   Retrying in 4.0s (attempt 4)...[0m
+
+[91m❌ Retry failed:[0m LLM call failed after 4 retries
+Last error: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'insufficient balance (1008)'}, 'request_id': '05e836a8579b96e0d45a921d35e76293'}
+
+[1m[96mSession Statistics:[0m
+[2m────────────────────────────────────────[0m
+  Session Duration: 00:00:14
+  Total Messages: 2
+    - User Messages: [92m1[0m
+    - Assistant Replies: [94m0[0m
+    - Tool Calls: [93m0[0m
+  Available Tools: 8
+[2m────────────────────────────────────────[0m
+
